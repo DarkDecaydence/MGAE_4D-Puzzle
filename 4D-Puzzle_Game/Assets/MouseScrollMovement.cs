@@ -23,12 +23,9 @@ public class MouseScrollMovement : MonoBehaviour {
         var oldWCoord = wCoord;
 
         wCoord += scrollDelta;
-        if (wCoord < 0) wCoord = 0;
-        if (wCoord > maxW) wCoord = maxW;
+        var deltaW = ClampFloat(wCoord, maxW) - ClampFloat(oldWCoord, maxW);
 
-        var deltaW = wCoord - oldWCoord;
-
-        thisRenderer.material.color = ChangeColor(thisRenderer.material.color, wCoord / maxW);
+        thisRenderer.material.color = ChangeColor(thisRenderer.material.color, ClampFloat(oldWCoord, maxW) / maxW);
         var curMovement = movementVector * deltaW;
         gameObject.transform.position += curMovement;
 	}
@@ -39,5 +36,9 @@ public class MouseScrollMovement : MonoBehaviour {
                                  newGreen,
                                  thisRenderer.material.color.b);
         return newColor;
+    }
+
+    private float ClampFloat(float i, float max) {
+        return Math.Min(Math.Max(i, 0), max);
     }
 }
