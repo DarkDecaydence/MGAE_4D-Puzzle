@@ -212,8 +212,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
             
             Vector2 input = new Vector2
                 {
-                    x = CrossPlatformInputManager.GetAxis("Yaw"),
-                    y = CrossPlatformInputManager.GetAxis("Power")
+                    x = CrossPlatformInputManager.GetAxis("Horizontal"),
+                    y = CrossPlatformInputManager.GetAxis("Vertical")
                 };
 			movementSettings.UpdateDesiredTargetSpeed(input);
             return input;

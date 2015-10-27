@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/**
+ * 4th dimensional controller.
+ */
 public class PController : MonoBehaviour {
 
     public static int playerW;
@@ -16,19 +19,8 @@ public class PController : MonoBehaviour {
 
     void FixedUpdate()
     {
-        float moveHorizontal = Input.GetAxis("Yaw");
-        float moveVertical = Input.GetAxis("Power");
-        float moveW = Input.GetAxis("Pitch");
-        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
+        float moveW = Input.GetAxis("Wertical");
         MoveFloatW(moveW*0.5f);
-        
-        /*
-        if (moveW > 0 && playerW < 4) {
-            SetW(playerW + 1);
-        } else if (moveW < 0 && playerW > 0) {
-            SetW(playerW - 1);
-        }*/
-        rb.AddForce(movement * speed);
     }
 
     void SetW(int w)

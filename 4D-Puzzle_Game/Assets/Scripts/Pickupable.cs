@@ -1,10 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SphereCollider4D : Collider {
-    
-    public Vector3 center { get; set; }
-    public float radius { get; set; }
+public class Pickupable : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -15,6 +12,4 @@ public class SphereCollider4D : Collider {
 	void Update () {
 	
 	}
-
-    
 }
