@@ -28,13 +28,6 @@ public class PController : MonoBehaviour {
             SetW(playerW - 1);
         } 
     }
-    /*
-    void FixedUpdate()
-    {
-        float moveW = Input.GetAxis("Wertical");
-        MoveFloatW(moveW*0.5f);
-    }*/
-
     void SetW(int w)
     {
         FourthDimension otherScript;

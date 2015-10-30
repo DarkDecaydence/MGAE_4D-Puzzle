@@ -8,6 +8,11 @@ public class PickupObject : MonoBehaviour {
 	public float distance;
 	public float smooth;
     public FourthDimension Fourth;
+    public static int playerW;
+    public float speed;
+    private float floatW;
+    public GameObject obj;
+
 	// Use this for initialization
 	void Start () {
 		mainCamera = GameObject.FindWithTag("MainCamera");
@@ -22,6 +27,15 @@ public class PickupObject : MonoBehaviour {
 		} else {
 			pickup();
 		}
+        if (Input.GetKeyDown(KeyCode.UpArrow) && playerW < 4)
+        {
+            SetW(playerW + 1);
+        }
+        if (Input.GetKeyDown(KeyCode.DownArrow) && playerW > 0)
+        {
+            SetW(playerW - 1);
+        }
+
 	}
 
 	void rotateObject() {
@@ -67,4 +81,18 @@ public class PickupObject : MonoBehaviour {
 		carriedObject.gameObject.GetComponent<Rigidbody>().useGravity = true;
 		carriedObject = null;
 	}
+    
+    void SetW(int w)
+    {
+        FourthDimension otherScript;
+        otherScript = GetComponent<FourthDimension>();
+        otherScript.W = w;
+        playerW = w;
+        obj.layer = 8 + playerW;
+        if (carrying) {
+            carriedObject.gameObject.layer = obj.layer;
+            carriedObject.GetComponent<Pickupable>().SetW(playerW);
+        }
+    }
+
 }
