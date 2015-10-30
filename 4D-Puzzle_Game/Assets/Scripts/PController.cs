@@ -17,11 +17,23 @@ public class PController : MonoBehaviour {
         rb = GetComponent<Rigidbody>();
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.UpArrow) && playerW < 4)
+        {
+            SetW(playerW + 1);
+        }
+        if (Input.GetKeyDown(KeyCode.DownArrow) && playerW > 0)
+        {
+            SetW(playerW - 1);
+        } 
+    }
+    /*
     void FixedUpdate()
     {
         float moveW = Input.GetAxis("Wertical");
         MoveFloatW(moveW*0.5f);
-    }
+    }*/
 
     void SetW(int w)
     {
