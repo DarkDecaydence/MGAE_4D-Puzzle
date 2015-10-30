@@ -17,8 +17,12 @@ public class FourthDimension : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+<<<<<<< HEAD
         
         diffW = (int)Mathf.Abs(W - PickupObject.playerW); 
+=======
+        diffW = (int)Mathf.Abs(W - PController.playerW); 
+>>>>>>> ea86a0e8a15dfb383131b4dcaaab681214f16707
         if (diffW != diffWold) {
             ChangeColor();
         }
