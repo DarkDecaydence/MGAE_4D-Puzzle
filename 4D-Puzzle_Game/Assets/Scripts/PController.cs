@@ -28,6 +28,7 @@ public class PController : MonoBehaviour {
             SetW(playerW - 1);
         } 
     }
+
     /*
     void FixedUpdate()
     {

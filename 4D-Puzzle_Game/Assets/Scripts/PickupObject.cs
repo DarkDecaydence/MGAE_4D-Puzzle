@@ -8,6 +8,7 @@ public class PickupObject : MonoBehaviour {
 	public float distance;
 	public float smooth;
     public FourthDimension Fourth;
+
 	// Use this for initialization
 	void Start () {
 		mainCamera = GameObject.FindWithTag("MainCamera");
