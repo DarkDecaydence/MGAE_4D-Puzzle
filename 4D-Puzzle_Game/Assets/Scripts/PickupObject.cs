@@ -42,8 +42,12 @@ public class PickupObject : MonoBehaviour {
 		carriedObject.transform.Rotate(5,10,15);
 	}
 	void carry(GameObject o) {
-		o.transform.position = Vector3.Lerp (o.transform.position, mainCamera.transform.position + mainCamera.transform.forward * distance, Time.deltaTime * smooth);
-		o.transform.rotation = Quaternion.identity;
+      //  if (!o.GetComponent<Pickupable>().IsCompound)
+       // {
+            
+            o.transform.position = Vector3.Lerp(o.transform.position, mainCamera.transform.position + mainCamera.transform.forward * distance, Time.deltaTime * smooth);
+            o.transform.rotation = Quaternion.identity;
+        //}
 	}
 
 	void pickup() {
@@ -59,10 +63,19 @@ public class PickupObject : MonoBehaviour {
 					FourthDimension pf = p.gameObject.GetComponent<FourthDimension>();
                     if (pf.W == Fourth.W)
                     {
+
                         carrying = true;
                         carriedObject = p.gameObject;
-                        //					p.gameObject.rigidbody.isKinematic = true;
-                        p.gameObject.GetComponent<Rigidbody>().useGravity = false;
+                        if (!p.IsCompound)
+                        {
+                            //					p.gameObject.rigidbody.isKinematic = true;
+                            p.gameObject.GetComponent<Rigidbody>().useGravity = false;
+                        }
+                        else if (p.IsCompound) {
+                            foreach (CompoundPickupable cp in ((CompoundPickupable)p).Family) {
+                                cp.gameObject.GetComponent<Rigidbody>().useGravity = false;
+                            }
+                        }
                     }
 				}
 			}
