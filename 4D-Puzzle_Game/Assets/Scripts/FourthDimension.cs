@@ -24,6 +24,7 @@ public class FourthDimension : MonoBehaviour {
         }
         diffWold = diffW;
 	}
+
     public void SetW(int w)
     {
         W = w;
