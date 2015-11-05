@@ -7,7 +7,8 @@ public class CompoundPickupable : Pickupable {
 	// Use this for initialization
     public CompoundPickupable[] Family;
 
-    void Start() {
+    protected override void Start() {
         IsCompound = true;
+        base.Start();
     }
 }
