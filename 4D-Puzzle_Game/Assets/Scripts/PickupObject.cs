@@ -42,12 +42,26 @@ public class PickupObject : MonoBehaviour {
 		carriedObject.transform.Rotate(5,10,15);
 	}
 	void carry(GameObject o) {
-      //  if (!o.GetComponent<Pickupable>().IsCompound)
-       // {
+        if (!o.GetComponent<Pickupable>().IsCompound)
+        {
+
+            Vector3 diff = mainCamera.transform.position + mainCamera.transform.forward * distance - o.transform.position;
+            o.GetComponent<Rigidbody>().AddForce(diff*10);
             
-            o.transform.position = Vector3.Lerp(o.transform.position, mainCamera.transform.position + mainCamera.transform.forward * distance, Time.deltaTime * smooth);
-            o.transform.rotation = Quaternion.identity;
-        //}
+            //o.transform.position = Vector3.Lerp(o.transform.position, mainCamera.transform.position + mainCamera.transform.forward * distance, Time.deltaTime * smooth);
+            //o.transform.rotation = Quaternion.identity;
+        }
+        else if (o.GetComponent<Pickupable>().IsCompound) {
+            Vector3 diff = mainCamera.transform.position + mainCamera.transform.forward * distance - o.transform.position;
+            foreach (CompoundPickupable c in o.GetComponent<CompoundPickupable>().Family)
+            {
+                c.GetComponent<Rigidbody>().AddForce(diff*10);
+                c.GetComponent<Rigidbody>().drag = 2.5f;
+               // c.transform.rotation = Quaternion.identity;
+        
+                //c.transform.position = Vector3.Lerp(c.transform.position, c.transform.position + diff, Time.deltaTime * smooth);
+            }
+        }
 	}
 
 	void pickup() {
@@ -56,12 +70,13 @@ public class PickupObject : MonoBehaviour {
 			int y = Screen.height / 2;
 
 			Ray ray = mainCamera.GetComponent<Camera>().ScreenPointToRay(new Vector3(x,y));
-			RaycastHit hit;
-			if(Physics.Raycast(ray, out hit)) {
+            RaycastHit hit;
+            var mask = 1 << 8 + playerW;
+			if(Physics.Raycast(ray, out hit, 2.0f, mask)) {
 				Pickupable p = hit.collider.GetComponent<Pickupable>();
 				if(p != null) {
 					FourthDimension pf = p.gameObject.GetComponent<FourthDimension>();
-                    if (pf.W == Fourth.W)
+                  //  if (pf.W == Fourth.W)
                     {
 
                         carrying = true;
@@ -89,10 +104,22 @@ public class PickupObject : MonoBehaviour {
 	}
 
 	void dropObject() {
-		carrying = false;
-	//	carriedObject.gameObject.rigidbody.isKinematic = false;
-		carriedObject.gameObject.GetComponent<Rigidbody>().useGravity = true;
-		carriedObject = null;
+        if (carriedObject.GetComponent<Pickupable>().IsCompound)
+        {
+            foreach (CompoundPickupable c in carriedObject.gameObject.GetComponent<CompoundPickupable>().Family)
+            {
+                carrying = false;
+                c.GetComponent<Rigidbody>().useGravity = true;
+                carriedObject = null;
+            }
+        }
+        else
+        {
+            carrying = false;
+            //	carriedObject.gameObject.rigidbody.isKinematic = false;
+            carriedObject.gameObject.GetComponent<Rigidbody>().useGravity = true;
+            carriedObject = null;
+        }
 	}
     
     void SetW(int w)
