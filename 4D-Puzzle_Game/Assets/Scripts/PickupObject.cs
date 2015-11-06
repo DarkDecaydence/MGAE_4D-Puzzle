@@ -98,6 +98,11 @@ public class PickupObject : MonoBehaviour {
                         }
                     }
 				}
+
+                Interactive i = hit.collider.GetComponent<Interactive>();
+                if (i != null) {
+                    i.DoAction();
+                }
 			}
 		}
 	}

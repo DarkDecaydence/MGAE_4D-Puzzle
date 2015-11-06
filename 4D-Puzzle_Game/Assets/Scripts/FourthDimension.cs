@@ -4,7 +4,6 @@ using System.Collections.Generic;
 public class FourthDimension : MonoBehaviour {
     
     public int W;
-    public GameObject obj;
     
     private static Color[] w_Colors = new Color[] {
         new Color(1, 0, 0, 0.9f),
@@ -24,13 +23,13 @@ public class FourthDimension : MonoBehaviour {
     
 	// Use this for initialization
 	protected virtual void Start () {
-        if (obj.GetComponent<Renderer>() != null) {
-            obj.GetComponent<Renderer>().material.color = w_Colors[W];
+        if (gameObject.GetComponent<Renderer>() != null) {
+            gameObject.GetComponent<Renderer>().material.color = w_Colors[W];
             visibleColor = w_Colors[W];
         }
 
         ChangeColor();
-        obj.layer = 8 + W;
+        gameObject.layer = 8 + W;
     }
 	
 	// Update is called once per frame
@@ -51,7 +50,7 @@ public class FourthDimension : MonoBehaviour {
 
     protected void ChangeColor()
     {
-        var renderer = obj.GetComponent<Renderer>();
+        var renderer = gameObject.GetComponent<Renderer>();
         
         if (renderer != null) {
             targetColorQueue.Add(w_Colors[diffW]);
@@ -59,7 +58,7 @@ public class FourthDimension : MonoBehaviour {
     }
     
     private void TweenChangeColor() {
-        var renderer = obj.GetComponent<Renderer>();
+        var renderer = gameObject.GetComponent<Renderer>();
 
         if (renderer != null) {
             if (targetColorQueue.Count > 0) {

@@ -10,9 +10,12 @@ public class FourthDimensionLock : FourthDimension {
 	// Use this for initialization
 	protected sealed override void Start () {
         IsLocked = true;
-        if (obj.GetComponent<Renderer>())
-            obj.GetComponent<Renderer>().material.color = lockColor;
-        obj.layer = 0;
+
+        var renderer = gameObject.GetComponent<Renderer>();
+        if (renderer != null)
+            renderer.material.color = lockColor;
+
+        gameObject.layer = 0;
     }
 	
 	// Update is called once per frame
@@ -25,13 +28,10 @@ public class FourthDimensionLock : FourthDimension {
     public void OpenLock() {
         IsLocked = false;
         ChangeColor();
-        obj.layer = 8 + W;
+        gameObject.layer = 8 + W;
     }
 
     public void CloseLock() {
-        IsLocked = true;
-        if (obj.GetComponent<Renderer>())
-            obj.GetComponent<Renderer>().material.color = lockColor;
-        obj.layer = 0;
+        Start();
     }
 }
