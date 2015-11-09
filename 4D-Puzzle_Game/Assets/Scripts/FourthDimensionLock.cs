@@ -12,7 +12,6 @@ public class FourthDimensionLock : FourthDimension {
         var renderer = gameObject.GetComponent<Renderer>();
 
         if (renderer != null) {
-
             if (IsLocked) {
                 renderer.material.color = lockColor;
                 gameObject.layer = 0;
@@ -29,6 +28,12 @@ public class FourthDimensionLock : FourthDimension {
             base.Update();
         }
 	}
+
+    public sealed override void SetW(int w) {
+        if (!IsLocked) {
+            W = w;
+        }
+    }
 
     public void OpenLock() {
         IsLocked = false;
