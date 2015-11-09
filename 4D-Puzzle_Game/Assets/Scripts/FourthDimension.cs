@@ -42,14 +42,11 @@ public class FourthDimension : MonoBehaviour {
         TweenChangeColor();
     }
 
-    public void SetW(int w)
-    {
+    public virtual void SetW(int w) {
         W = w;
-        ChangeColor();
     }
 
-    protected void ChangeColor()
-    {
+    protected void ChangeColor() {
         targetColorQueue.Add(w_Colors[diffW]);
     }
     
