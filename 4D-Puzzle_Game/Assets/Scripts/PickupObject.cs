@@ -16,10 +16,9 @@ public class PickupObject : MonoBehaviour {
     public static int MinPlayerW = 0;
     public static int MaxObjectW = 4;
     public static int MinObjectW = 0;
-    
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		mainCamera = GameObject.FindWithTag("MainCamera");
 	}
 	
@@ -32,11 +31,13 @@ public class PickupObject : MonoBehaviour {
 		} else {
 			pickup();
 		}
-        if (Input.GetKeyDown(KeyCode.UpArrow) && playerW < MaxPlayerW)
+
+        if (Input.GetKeyDown(KeyCode.UpArrow) && playerW < 4)
         {
             SetW(playerW + 1);
         }
-        if (Input.GetKeyDown(KeyCode.DownArrow) && playerW > MinPlayerW)
+
+        if (Input.GetKeyDown(KeyCode.DownArrow) && playerW > 0)
         {
             SetW(playerW - 1);
         }
@@ -46,10 +47,10 @@ public class PickupObject : MonoBehaviour {
 	void rotateObject() {
 		carriedObject.transform.Rotate(5,10,15);
 	}
+
 	void carry(GameObject o) {
         if (!o.GetComponent<Pickupable>().IsCompound)
         {
-
             Vector3 diff = mainCamera.transform.position + mainCamera.transform.forward * distance - o.transform.position;
             o.GetComponent<Rigidbody>().AddForce(diff*10);
             
@@ -62,7 +63,7 @@ public class PickupObject : MonoBehaviour {
             {
                 c.GetComponent<Rigidbody>().AddForce(diff*10);
                 c.GetComponent<Rigidbody>().drag = 2.5f;
-               // c.transform.rotation = Quaternion.identity;
+                //c.transform.rotation = Quaternion.identity;
         
                 //c.transform.position = Vector3.Lerp(c.transform.position, c.transform.position + diff, Time.deltaTime * smooth);
             }
@@ -79,7 +80,7 @@ public class PickupObject : MonoBehaviour {
             var mask = 1 << 8 + playerW;
 			if(Physics.Raycast(ray, out hit, 2.0f, mask)) {
 				Pickupable p = hit.collider.GetComponent<Pickupable>();
-				if(p != null) {
+				if(p != null && !p.IsLocked) {
 					FourthDimension pf = p.gameObject.GetComponent<FourthDimension>();
                   //  if (pf.W == Fourth.W)
                     {
@@ -88,7 +89,7 @@ public class PickupObject : MonoBehaviour {
                         carriedObject = p.gameObject;
                         if (!p.IsCompound)
                         {
-                            //					p.gameObject.rigidbody.isKinematic = true;
+                            // p.gameObject.rigidbody.isKinematic = true;
                             p.gameObject.GetComponent<Rigidbody>().useGravity = false;
                         }
                         else if (p.IsCompound) {
@@ -134,37 +135,14 @@ public class PickupObject : MonoBehaviour {
     
     void SetW(int w)
     {
-        bool up = w > playerW;
         FourthDimension otherScript;
         otherScript = GetComponent<FourthDimension>();
         otherScript.W = w;
         playerW = w;
         obj.layer = 8 + playerW;
         if (carrying) {
-            if (carriedObject.GetComponent<Pickupable>().IsCompound) {
-                if (up && carriedObject.GetComponent<CompoundPickupable>().CanGoWUp) {
-                    foreach (CompoundPickupable c in carriedObject.GetComponent<CompoundPickupable>().Family) {
-                        c.gameObject.layer = c.gameObject.layer + 1;
-                        c.SetW(c.W + 1);
-                    }
-                }
-                else if (!up && carriedObject.GetComponent<CompoundPickupable>().CanGoWDown)
-                {
-                    foreach (CompoundPickupable c in carriedObject.GetComponent<CompoundPickupable>().Family)
-                    {
-                        c.gameObject.layer = c.gameObject.layer - 1;
-                        c.SetW(c.W - 1);
-                    }
-                }
-                else {
-                    dropObject();
-                }
-            } else {     
-                carriedObject.gameObject.layer = obj.layer;
-                carriedObject.GetComponent<Pickupable>().SetW(playerW); 
-                
-            }
-            
+            carriedObject.gameObject.layer = obj.layer;
+            carriedObject.GetComponent<Pickupable>().SetW(playerW);
         }
     }
 
