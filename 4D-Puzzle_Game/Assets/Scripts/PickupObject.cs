@@ -12,9 +12,13 @@ public class PickupObject : MonoBehaviour {
     public float speed;
     private float floatW;
     public GameObject obj;
+    public static int MaxPlayerW = 4;
+    public static int MinPlayerW = 0;
+    public static int MaxObjectW = 4;
+    public static int MinObjectW = 0;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		mainCamera = GameObject.FindWithTag("MainCamera");
 	}
 	
@@ -27,10 +31,12 @@ public class PickupObject : MonoBehaviour {
 		} else {
 			pickup();
 		}
+
         if (Input.GetKeyDown(KeyCode.UpArrow) && playerW < 4)
         {
             SetW(playerW + 1);
         }
+
         if (Input.GetKeyDown(KeyCode.DownArrow) && playerW > 0)
         {
             SetW(playerW - 1);
@@ -74,7 +80,7 @@ public class PickupObject : MonoBehaviour {
             var mask = 1 << 8 + playerW;
 			if(Physics.Raycast(ray, out hit, 2.0f, mask)) {
 				Pickupable p = hit.collider.GetComponent<Pickupable>();
-				if(p != null) {
+				if(p != null && !p.IsLocked) {
 					FourthDimension pf = p.gameObject.GetComponent<FourthDimension>();
                   //  if (pf.W == Fourth.W)
                     {
