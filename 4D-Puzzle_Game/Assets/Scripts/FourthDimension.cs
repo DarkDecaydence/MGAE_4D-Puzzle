@@ -44,6 +44,7 @@ public class FourthDimension : MonoBehaviour {
 
     public virtual void SetW(int w) {
         W = w;
+        gameObject.layer = 8 + W;
     }
 
     protected void ChangeColor() {

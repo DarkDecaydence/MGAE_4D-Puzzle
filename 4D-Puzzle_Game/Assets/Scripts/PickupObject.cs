@@ -144,12 +144,31 @@ public class PickupObject : MonoBehaviour {
     
     void SetW(int w)
     {
+        bool up = w > playerW;
         FourthDimension otherScript;
         otherScript = GetComponent<FourthDimension>();
         otherScript.W = w;
         playerW = w;
         gameObject.layer = 8 + playerW;
         if (carrying) {
+            if (carriedObject.GetComponent<Pickupable>().IsCompound) { 
+                if(up && carriedObject.GetComponent<CompoundPickupable>().CanGoWUp) {
+                    foreach (CompoundPickupable c in carriedObject.GetComponent<CompoundPickupable>().Family) {
+                        c.SetW(c.W + 1);                        
+                      }
+                }
+                else if (!up && carriedObject.GetComponent<CompoundPickupable>().CanGoWDown)
+                {
+                    foreach (CompoundPickupable c in carriedObject.GetComponent<CompoundPickupable>().Family)
+                    {
+                        c.SetW(c.W - 1);
+                    }
+                }
+                else { 
+                //DROP IT LIKE ITS HOOOOT
+                    dropObject();
+                }
+            }
             carriedObject.gameObject.layer = gameObject.layer;
             carriedObject.GetComponent<Pickupable>().SetW(playerW);
         }
