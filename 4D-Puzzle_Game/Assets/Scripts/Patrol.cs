@@ -21,7 +21,6 @@ public class Patrol : FourthDimension {
         var result = Vector4.Lerp(A, B, lerpTime);
         gameObject.transform.position = new Vector3(result.x, result.y, result.z);
         SetFloatW(result.w);
-        Debug.Log(result.w + " " + W);
         base.Update();
 	}
 
