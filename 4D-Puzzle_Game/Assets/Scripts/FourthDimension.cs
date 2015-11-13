@@ -6,11 +6,11 @@ public class FourthDimension : MonoBehaviour {
     public int W;
     
     private static Color[] w_Colors = new Color[] {
-        new Color(1, 0, 0, 0.9f),
-        new Color(1, 0.92f, 0.02f, 0.7f),
-        new Color(0, 1, 0, 0.5f),
-        new Color(0, 0, 1, 0.3f),
-        new Color(0.93f, 0.51f, 0.93f, 0.1f)
+        new Color(1, 1, 1, 1),
+        new Color(1, 1, 1, 0.5f),
+        new Color(1, 1, 1, 0.0f),
+        new Color(0, 0, 1, 0.0f),
+        new Color(0.93f, 0.51f, 0.93f, 0.0f)
     };
 
     private int diffW;
