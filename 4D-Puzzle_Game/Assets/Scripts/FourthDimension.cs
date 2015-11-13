@@ -42,19 +42,13 @@ public class FourthDimension : MonoBehaviour {
         TweenChangeColor();
     }
 
-    public void SetW(int w)
-    {
+    public virtual void SetW(int w) {
         W = w;
-        ChangeColor();
+        gameObject.layer = 8 + W;
     }
 
-    protected void ChangeColor()
-    {
-        var renderer = gameObject.GetComponent<Renderer>();
-        
-        if (renderer != null) {
-            targetColorQueue.Add(w_Colors[diffW]);
-        }
+    protected void ChangeColor() {
+        targetColorQueue.Add(w_Colors[diffW]);
     }
     
     private void TweenChangeColor() {
