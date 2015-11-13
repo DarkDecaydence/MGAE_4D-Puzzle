@@ -88,8 +88,6 @@ public class PickupObject : MonoBehaviour {
 			if(Physics.Raycast(ray, out hit, 2.0f, mask)) {
 				Pickupable p = hit.collider.GetComponent<Pickupable>();
 				if(p != null && !p.IsLocked) {
-					FourthDimension pf = p.gameObject.GetComponent<FourthDimension>();
-                  //  if (pf.W == Fourth.W)
                     {
 
                         carrying = true;
@@ -117,11 +115,11 @@ public class PickupObject : MonoBehaviour {
 
 	void checkDrop() {
 		if(Input.GetKeyDown (KeyCode.E)) {
-			dropObject();
+			dropDaBass();
 		}
 	}
 
-	void dropObject() {
+	void dropDaBass() {
         if (carriedObject.GetComponent<Pickupable>().IsCompound)
         {
             foreach (CompoundPickupable c in carriedObject.gameObject.GetComponent<CompoundPickupable>().Family)
@@ -166,7 +164,7 @@ public class PickupObject : MonoBehaviour {
                 }
                 else { 
                 //DROP IT LIKE ITS HOOOOT
-                    dropObject();
+                    dropDaBass();
                 }
             }
             carriedObject.gameObject.layer = gameObject.layer;
