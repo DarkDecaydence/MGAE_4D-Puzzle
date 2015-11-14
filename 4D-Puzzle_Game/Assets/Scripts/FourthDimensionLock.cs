@@ -27,18 +27,18 @@ public class FourthDimensionLock : FourthDimension {
         if (!IsLocked) {
             base.Update();
         }
-	}
+    }
 
     public sealed override void SetW(int w) {
         if (!IsLocked) {
             W = w;
+            gameObject.layer = 8 + W;
         }
     }
 
     public void OpenLock() {
         IsLocked = false;
-        ChangeColor();
-        gameObject.layer = 8 + W;
+        Start();
     }
 
     public void CloseLock() {
