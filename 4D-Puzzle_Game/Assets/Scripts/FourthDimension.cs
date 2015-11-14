@@ -5,19 +5,18 @@ public class FourthDimension : MonoBehaviour {
     
     public int W;
     
-    private static Color[] w_Colors = new Color[] {
-        new Color(1, 0, 0, 0.9f),
-        new Color(1, 0.92f, 0.02f, 0.7f),
-        new Color(0, 1, 0, 0.5f),
-        new Color(0, 0, 1, 0.3f),
-        new Color(0.93f, 0.51f, 0.93f, 0.1f)
+    protected static Color[] w_Colors = new Color[] {
+        new Color(1, 1, 1, 1),
+        new Color(1, 1, 1, 0.5f),
+        new Color(1, 1, 1, 0.0f),
+        new Color(0, 0, 1, 0.0f),
+        new Color(0.93f, 0.51f, 0.93f, 0.0f)
     };
-
     private int diffW;
     private int diffWold;
-    private Color visibleColor;
-    private float t_tween;
-    private const float tween_speed = 5.0f;
+    protected Color visibleColor;
+    protected float t_tween;
+    protected const float tween_speed = 5.0f;
 
     protected readonly List<Color> targetColorQueue = new List<Color>();
     
@@ -26,6 +25,7 @@ public class FourthDimension : MonoBehaviour {
         if (gameObject.GetComponent<Renderer>() != null) {
             gameObject.GetComponent<Renderer>().material.color = w_Colors[W];
             visibleColor = w_Colors[W];
+            
         }
 
         ChangeColor();
@@ -42,22 +42,16 @@ public class FourthDimension : MonoBehaviour {
         TweenChangeColor();
     }
 
-    public void SetW(int w)
-    {
+    public virtual void SetW(int w) {
         W = w;
-        ChangeColor();
+        gameObject.layer = 8 + W;
     }
 
-    protected void ChangeColor()
-    {
-        var renderer = gameObject.GetComponent<Renderer>();
-        
-        if (renderer != null) {
-            targetColorQueue.Add(w_Colors[diffW]);
-        }
+    protected void ChangeColor() {
+        targetColorQueue.Add(w_Colors[diffW]);
     }
     
-    private void TweenChangeColor() {
+    protected void TweenChangeColor() {
         var renderer = gameObject.GetComponent<Renderer>();
 
         if (renderer != null) {

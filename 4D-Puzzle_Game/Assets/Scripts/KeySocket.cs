@@ -3,7 +3,7 @@ using System.Collections;
 
 public class KeySocket : MonoBehaviour {
     public string RequiredKey;
-    public float timeDelay;
+    public float TimeDelay;
     public GameObject LockedObject;
 
     private float collisionTimer;
@@ -21,7 +21,7 @@ public class KeySocket : MonoBehaviour {
             if (keyMatch) {
                 collisionTimer += Time.deltaTime;
 
-                if (collisionTimer >= timeDelay) {
+                if (collisionTimer >= TimeDelay) {
                     var lockedObj = LockedObject.GetComponent<FourthDimensionLock>();
                     if (lockedObj != null && lockedObj.IsLocked) {
                         Debug.Log("Key has been socketed!");
