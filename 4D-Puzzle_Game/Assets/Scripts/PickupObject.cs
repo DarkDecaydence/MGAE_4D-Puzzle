@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 public class PickupObject : MonoBehaviour {
 
-    public string[] Inventory = new string[16];
+    public List<string> Inventory = new List<string>();
     GameObject mainCamera;
 	bool carrying;
 	GameObject carriedObject;
@@ -109,6 +109,12 @@ public class PickupObject : MonoBehaviour {
                 Interactive i = hit.collider.GetComponent<Interactive>();
                 if (i != null) {
                     i.DoAction();
+                }
+
+                InventoryItem it = hit.collider.GetComponent<InventoryItem>();
+                if (it != null) {
+                    Object.Destroy(hit.collider.gameObject);
+                    Inventory.Add(it.ItemName);
                 }
 			}
 		}
