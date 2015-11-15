@@ -3,6 +3,7 @@ using System.Collections;
 
 public class PickupObject : MonoBehaviour {
 
+    public string[] Inventory = new string[16];
     GameObject mainCamera;
 	bool carrying;
 	GameObject carriedObject;
@@ -85,7 +86,7 @@ public class PickupObject : MonoBehaviour {
 			Ray ray = mainCamera.GetComponent<Camera>().ScreenPointToRay(new Vector3(x,y));
             RaycastHit hit;
             var mask = 1 << 8 + playerW;
-			if(Physics.Raycast(ray, out hit, 2.0f, mask)) {
+			if(Physics.Raycast(ray, out hit, Distance, mask)) {
 				Pickupable p = hit.collider.GetComponent<Pickupable>();
 				if(p != null && !p.IsLocked) {
                     {
