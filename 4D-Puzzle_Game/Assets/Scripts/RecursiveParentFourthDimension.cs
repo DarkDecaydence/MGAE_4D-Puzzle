@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-public class ParentFourthDimensional : MonoBehaviour {
+public class RecursiveParentFourthDimension : MonoBehaviour {
 
     public int W;
 
@@ -33,33 +33,18 @@ public class ParentFourthDimensional : MonoBehaviour {
     protected readonly List<Color> targetColorQueue = new List<Color>();
 
     private bool isOpaque;
-    
+
+    // Use this for initialization
     void Start () {
-        foreach (Transform child in gameObject.transform) {
-            var childRenderer = child.gameObject.GetComponent<Renderer>();
-            if (childRenderer != null)
-            {
-                if (childRenderer.materials.Length > 1) {
-                    var debugMsg = string.Format("{0} -> {1} children... Child of {2}\n",
-                        childRenderer.gameObject.name, childRenderer.materials.Length, gameObject.transform.parent.name);
-                    var matList = string.Empty;
-                    foreach (Material mat in childRenderer.materials) {
-                        matList += mat.name + "\n";
-                    }
-                    debugMsg = debugMsg + matList;
-                    Debug.Log(debugMsg);
-                }
-                foreach (Material m in childRenderer.materials) { 
-                    childRenderer.material.color = w_Colors[W];
-                }
-            }
-        }
         diffWold = -1;
+        if (gameObject.GetComponent<Renderer>() != null) {
+            isOpaque = Mathf.Approximately(gameObject.GetComponent<Renderer>().material.GetFloat("_Mode"), 0f);
+        }
         SetW(W);
     }
 
-    protected virtual void Update()
-    {
+    // Update is called once per frame
+    protected virtual void Update() {
         diffW = (int)Mathf.Abs(W - PickupObject.playerW);
         if (diffW != diffWold)
             ChangeColor();
@@ -68,62 +53,36 @@ public class ParentFourthDimensional : MonoBehaviour {
         TweenChangeColor();
     }
 
-    protected void ChangeColor()
-    {
+    protected void ChangeColor() {
         targetColorQueue.Add(w_Colors[diffW]);
     }
 
-    public virtual void SetW(int w)
-    {
+    public virtual void SetW(int w) {
         W = w;
-        foreach (Transform child in transform) {
-            child.gameObject.layer = 8 + W;
-        }
+        gameObject.layer = 8 + W;
+        setWAllChildren(w);
     }
 
-    private void TweenChangeColor()
-    {
+    private void TweenChangeColor() {
         Color tweenedColor = visibleColor;
-        if (targetColorQueue.Count > 0)
-        {
+        if (targetColorQueue.Count > 0) {
             t_tween = Mathf.Clamp01(t_tween + Time.deltaTime * tween_speed);
 
             var nextColor = targetColorQueue[0];
 
             tweenedColor = Color.Lerp(visibleColor, nextColor, t_tween);
-            
-            foreach (Transform child in transform) {
-                var childRenderer = child.gameObject.GetComponent<Renderer>();
-                if (childRenderer != null) {
-                    childRenderer.material.color = tweenedColor;
 
-                    if (diffW > 0 && isOpaque) {
-                        foreach (Material m in childRenderer.materials) {
-                            setMaterialToFade(m);
-                        }
-                    }
-                }
-            }
+            setColorAllChildren(tweenedColor);
 
             if (diffW > 0 && isOpaque) {
+                setOpacityAllChildren(false);
                 isOpaque = false;
             }
         }
 
-        if (Mathf.Approximately(t_tween, 1f))
-        {
-            foreach (Transform child in transform) {
-                var childRenderer = child.gameObject.GetComponent<Renderer>();
-                if (childRenderer != null) {
-                    if (diffW == 0 && !isOpaque) {
-                        foreach (Material m in childRenderer.materials) {
-                            setMaterialToOpaque(m);
-                        }
-                    }
-                }
-            }
-
+        if (Mathf.Approximately(t_tween, 1f)) {
             if (diffW == 0 && !isOpaque) {
+                setOpacityAllChildren(true);
                 isOpaque = true;
             }
 
@@ -132,7 +91,48 @@ public class ParentFourthDimensional : MonoBehaviour {
             t_tween = 0f;
         }
     }
-    
+
+    private void setWAllChildren(int w) {
+        var childTransforms = gameObject.GetComponentsInChildren<Transform>();
+        foreach (Transform t in childTransforms) {
+            if (t.Equals(gameObject.transform)) continue;
+
+            t.gameObject.layer = 8 + w;
+        }
+    }
+
+    private void setOpacityAllChildren(bool opaque) {
+        var childTransforms = gameObject.GetComponentsInChildren<Transform>();
+        foreach (Transform t in childTransforms) {
+            if (t.Equals(gameObject.transform)) continue;
+
+            var renderer = t.gameObject.GetComponent<Renderer>();
+            if (renderer != null) {
+                foreach (Material m in renderer.materials) {
+                    if (opaque) {
+                        setMaterialToOpaque(m);
+                    } else {
+                        setMaterialToFade(m);
+                    }
+                }
+            }
+        }
+    }
+
+    private void setColorAllChildren(Color newColor) {
+        var childTransforms = gameObject.GetComponentsInChildren<Transform>();
+        foreach (Transform t in childTransforms) {
+            if (t.Equals(gameObject.transform)) continue;
+
+            var renderer = t.gameObject.GetComponent<Renderer>();
+            if (renderer != null) {
+                foreach (Material m in renderer.materials) {
+                    m.color = newColor;
+                }
+            }
+        }
+    }
+
     private void setMaterialToFade(Material m) {
         m.SetFloat("_Mode", 2);
         m.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
@@ -155,4 +155,3 @@ public class ParentFourthDimensional : MonoBehaviour {
         m.renderQueue = m.shader.renderQueue;
     }
 }
-
