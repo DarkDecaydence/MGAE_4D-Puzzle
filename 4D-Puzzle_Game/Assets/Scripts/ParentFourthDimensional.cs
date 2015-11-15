@@ -35,11 +35,23 @@ public class ParentFourthDimensional : MonoBehaviour {
     private bool isOpaque;
     
     void Start () {
-        foreach (Transform child in transform) {
+        foreach (Transform child in gameObject.transform) {
             var childRenderer = child.gameObject.GetComponent<Renderer>();
             if (childRenderer != null)
             {
-                childRenderer.material.color = w_Colors[W];
+                if (childRenderer.materials.Length > 1) {
+                    var debugMsg = string.Format("{0} -> {1} children... Child of {2}\n",
+                        childRenderer.gameObject.name, childRenderer.materials.Length, gameObject.transform.parent.name);
+                    var matList = string.Empty;
+                    foreach (Material mat in childRenderer.materials) {
+                        matList += mat.name + "\n";
+                    }
+                    debugMsg = debugMsg + matList;
+                    Debug.Log(debugMsg);
+                }
+                foreach (Material m in childRenderer.materials) { 
+                    childRenderer.material.color = w_Colors[W];
+                }
             }
         }
         diffWold = -1;
@@ -81,15 +93,20 @@ public class ParentFourthDimensional : MonoBehaviour {
             tweenedColor = Color.Lerp(visibleColor, nextColor, t_tween);
             
             foreach (Transform child in transform) {
-                var renderer = child.gameObject.GetComponent<Renderer>();
-                if (renderer != null) {
-                    renderer.material.color = tweenedColor;
+                var childRenderer = child.gameObject.GetComponent<Renderer>();
+                if (childRenderer != null) {
+                    childRenderer.material.color = tweenedColor;
 
                     if (diffW > 0 && isOpaque) {
-                        setMaterialToFade(renderer.material);
-                        isOpaque = false;
+                        foreach (Material m in childRenderer.materials) {
+                            setMaterialToFade(m);
+                        }
                     }
                 }
+            }
+
+            if (diffW > 0 && isOpaque) {
+                isOpaque = false;
             }
         }
 
@@ -99,7 +116,7 @@ public class ParentFourthDimensional : MonoBehaviour {
                 var childRenderer = child.gameObject.GetComponent<Renderer>();
                 if (childRenderer != null) {
                     if (diffW == 0 && !isOpaque) {
-                        setMaterialToOpaque(childRenderer.material);
+                        foreach (Material m in childRenderer.materials) { setMaterialToOpaque(m); }
                         isOpaque = true;
                     }
                 }
