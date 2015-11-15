@@ -18,7 +18,7 @@ public class InteractiveDoor : MonoBehaviour {
 
     void Update() {
         if (isOpen) {
-            r_tween += Time.deltaTime * 3 // Speed factor = 3
+            r_tween += Time.deltaTime * 3; // Speed factor = 3
   r_tween = Mathf.Clamp01(r_tween);
 #if RealDirVector
             gameObject.transform.rotation = 
