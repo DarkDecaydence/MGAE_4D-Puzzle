@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 public class PickupObject : MonoBehaviour {
 
+    public List<string> Inventory = new List<string>();
     GameObject mainCamera;
 	bool carrying;
 	GameObject carriedObject;
@@ -85,7 +86,7 @@ public class PickupObject : MonoBehaviour {
 			Ray ray = mainCamera.GetComponent<Camera>().ScreenPointToRay(new Vector3(x,y));
             RaycastHit hit;
             var mask = 1 << 8 + playerW;
-			if(Physics.Raycast(ray, out hit, 2.0f, mask)) {
+			if(Physics.Raycast(ray, out hit, Distance, mask)) {
 				Pickupable p = hit.collider.GetComponent<Pickupable>();
 				if(p != null && !p.IsLocked) {
                     {
@@ -108,6 +109,12 @@ public class PickupObject : MonoBehaviour {
                 Interactive i = hit.collider.GetComponent<Interactive>();
                 if (i != null) {
                     i.DoAction();
+                }
+
+                InventoryItem it = hit.collider.GetComponent<InventoryItem>();
+                if (it != null) {
+                    Object.Destroy(hit.collider.gameObject);
+                    Inventory.Add(it.ItemName);
                 }
 			}
 		}
