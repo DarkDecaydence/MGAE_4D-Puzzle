@@ -26,7 +26,14 @@ public class BatteryStation : MonoBehaviour
                 {
                     e.IsEnabled = true;
                 }
+                LockKey(other.gameObject);
             }
         }
+    }
+
+    void LockKey(GameObject other) {
+        other.transform.rotation = gameObject.transform.rotation;
+        other.transform.position = gameObject.transform.position;
+        other.GetComponent<Pickupable>().IsLocked = true;
     }
 }

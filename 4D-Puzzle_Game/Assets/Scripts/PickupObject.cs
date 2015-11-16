@@ -34,12 +34,14 @@ public class PickupObject : MonoBehaviour {
 			pickup();
 		}
 
-        if (Input.GetKeyDown(KeyCode.UpArrow) && playerW < 4)
+        var shiftUp = Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.UpArrow);
+        if (shiftUp && playerW < 4)
         {
             SetW(playerW + 1);
         }
 
-        if (Input.GetKeyDown(KeyCode.DownArrow) && playerW > 0)
+        var shiftDown = Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.DownArrow);
+        if (shiftDown && playerW > 0)
         {
             SetW(playerW - 1);
         }
@@ -129,7 +131,9 @@ public class PickupObject : MonoBehaviour {
 	}
 
 	void checkDrop() {
-		if(Input.GetKeyDown (KeyCode.E)) {
+        var obj_pickUp = carriedObject.GetComponent<Pickupable>();
+        bool isLocked = obj_pickUp != null ? obj_pickUp.IsLocked : false;
+        if (Input.GetKeyDown(KeyCode.E) || isLocked) {
 			dropDaBass();
 		}
 	}
