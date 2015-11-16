@@ -50,7 +50,7 @@ public class ParentFourthDimensional : MonoBehaviour {
                     Debug.Log(debugMsg);
                 }
                 foreach (Material m in childRenderer.materials) { 
-                    childRenderer.material.color = w_Colors[W];
+                    m.color = w_Colors[W];
                 }
             }
         }

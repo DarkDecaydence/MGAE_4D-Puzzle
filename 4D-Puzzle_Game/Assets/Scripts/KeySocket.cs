@@ -24,6 +24,7 @@ public class KeySocket : MonoBehaviour {
                 if (collisionTimer >= TimeDelay) {
                     var lockedObj = LockedObject.GetComponent<FourthDimensionLock>();
                     if (lockedObj != null && lockedObj.IsLocked) {
+
                         Debug.Log("Key has been socketed!");
                         lockedObj.OpenLock();
                     }
