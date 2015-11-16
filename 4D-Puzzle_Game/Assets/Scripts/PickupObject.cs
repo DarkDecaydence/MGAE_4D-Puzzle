@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class PickupObject : MonoBehaviour {
 
-    public List<string> Inventory = new List<string>();
+    public List<string> Inventory = new List<string>(1);
     GameObject mainCamera;
 	bool carrying;
 	GameObject carriedObject;
@@ -116,6 +116,14 @@ public class PickupObject : MonoBehaviour {
                     Object.Destroy(hit.collider.gameObject);
                     Inventory.Add(it.ItemName);
                 }
+
+                InteractiveDoor id = hit.collider.GetComponent<InteractiveDoor>();
+                if (id != null) {
+                    foreach (string k in Inventory) {
+                        Debug.Log("Try key: " + k);
+                        id.DoAction(k);
+                    }
+                }
 			}
 		}
 	}
@@ -129,9 +137,9 @@ public class PickupObject : MonoBehaviour {
 	void dropDaBass() {
         if (carriedObject.GetComponent<Pickupable>().IsCompound)
         {
+            carrying = false;
             foreach (CompoundPickupable c in carriedObject.gameObject.GetComponent<CompoundPickupable>().Family)
-            {
-                carrying = false;
+            {  
                 c.GetComponent<Rigidbody>().useGravity = true;
                 c.GetComponent<Rigidbody>().drag = 2.5f;
                 carriedObject = null;

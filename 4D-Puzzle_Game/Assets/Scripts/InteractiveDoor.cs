@@ -5,6 +5,10 @@ public class InteractiveDoor : MonoBehaviour {
     public Vector3 RotationAxis;
     private float r_tween = 0;
     private bool isOpen;  // Could be changed to public and have open+close?
+    public string key;
+    public float OpenTime;
+    float timePassed = 0.0f;
+    public float Angle;
 
     private Quaternion realDirectionVector {
         get {
@@ -17,20 +21,18 @@ public class InteractiveDoor : MonoBehaviour {
     }
 
     void Update() {
-        if (isOpen) {
-            r_tween += Time.deltaTime * 3; // Speed factor = 3
-  r_tween = Mathf.Clamp01(r_tween);
-#if RealDirVector
-            gameObject.transform.rotation = 
-                Vector3.Lerp(gameObject.transform.rotation, realDirectionVector, r_tween);
-#else
-            gameObject.transform.rotation =
-                Quaternion.Lerp(gameObject.transform.rotation, realDirectionVector, r_tween);
-#endif
+        
+        if (isOpen && timePassed < OpenTime) {
+            timePassed += Time.deltaTime;
+            gameObject.transform.Rotate(RotationAxis, Angle / OpenTime * Time.deltaTime);
         }
     }
 
-    void DoAction() {
-        isOpen = true;
+    public void DoAction(string key) {
+        if (key == "" || this.key == key)
+        {
+            Debug.Log("Sesamé open");
+            isOpen = true;
+        }
     }
 }

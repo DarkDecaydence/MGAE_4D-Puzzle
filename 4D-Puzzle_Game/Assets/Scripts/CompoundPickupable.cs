@@ -3,7 +3,9 @@ using System.Collections;
 
 public class CompoundPickupable : Pickupable {
     
+        
 	public CompoundPickupable[] Family;
+
 
     public bool CanGoWUp {
          get  { 
