@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 public class PickupObject : MonoBehaviour {
 
+    public List<string> Inventory = new List<string>(1);
     GameObject mainCamera;
 	bool carrying;
 	GameObject carriedObject;
@@ -33,12 +34,14 @@ public class PickupObject : MonoBehaviour {
 			pickup();
 		}
 
-        if (Input.GetKeyDown(KeyCode.UpArrow) && playerW < 4)
+        var shiftUp = Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.UpArrow);
+        if (shiftUp && playerW < 4)
         {
             SetW(playerW + 1);
         }
 
-        if (Input.GetKeyDown(KeyCode.DownArrow) && playerW > 0)
+        var shiftDown = Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.DownArrow);
+        if (shiftDown && playerW > 0)
         {
             SetW(playerW - 1);
         }
@@ -85,7 +88,7 @@ public class PickupObject : MonoBehaviour {
 			Ray ray = mainCamera.GetComponent<Camera>().ScreenPointToRay(new Vector3(x,y));
             RaycastHit hit;
             var mask = 1 << 8 + playerW;
-			if(Physics.Raycast(ray, out hit, 2.0f, mask)) {
+			if(Physics.Raycast(ray, out hit, Distance, mask)) {
 				Pickupable p = hit.collider.GetComponent<Pickupable>();
 				if(p != null && !p.IsLocked) {
                     {
@@ -109,12 +112,28 @@ public class PickupObject : MonoBehaviour {
                 if (i != null) {
                     i.DoAction();
                 }
+
+                InventoryItem it = hit.collider.GetComponent<InventoryItem>();
+                if (it != null) {
+                    Object.Destroy(hit.collider.gameObject);
+                    Inventory.Add(it.ItemName);
+                }
+
+                InteractiveDoor id = hit.collider.GetComponent<InteractiveDoor>();
+                if (id != null) {
+                    foreach (string k in Inventory) {
+                        Debug.Log("Try key: " + k);
+                        id.DoAction(k);
+                    }
+                }
 			}
 		}
 	}
 
 	void checkDrop() {
-		if(Input.GetKeyDown (KeyCode.E)) {
+        var obj_pickUp = carriedObject.GetComponent<Pickupable>();
+        bool isLocked = obj_pickUp != null ? obj_pickUp.IsLocked : false;
+        if (Input.GetKeyDown(KeyCode.E) || isLocked) {
 			dropDaBass();
 		}
 	}
@@ -122,9 +141,9 @@ public class PickupObject : MonoBehaviour {
 	void dropDaBass() {
         if (carriedObject.GetComponent<Pickupable>().IsCompound)
         {
+            carrying = false;
             foreach (CompoundPickupable c in carriedObject.gameObject.GetComponent<CompoundPickupable>().Family)
-            {
-                carrying = false;
+            {  
                 c.GetComponent<Rigidbody>().useGravity = true;
                 c.GetComponent<Rigidbody>().drag = 2.5f;
                 carriedObject = null;

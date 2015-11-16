@@ -5,7 +5,7 @@ public class Interactive : FourthDimension {
 
     public GameObject TargetObj;
 
-    public void DoAction() {
+    public virtual void DoAction() {
         var wLock = TargetObj.GetComponent<FourthDimensionLock>();
 
         if (wLock != null) {
