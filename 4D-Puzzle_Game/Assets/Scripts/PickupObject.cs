@@ -46,6 +46,8 @@ public class PickupObject : MonoBehaviour {
             SetW(playerW - 1);
         }
 
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
 	}
 
 	void rotateObject() {
@@ -54,25 +56,24 @@ public class PickupObject : MonoBehaviour {
 
 	void carry(GameObject o) {
         Vector3 diff = mainCamera.transform.position + mainCamera.transform.forward * Distance - o.transform.position;
-        var acceleration = diff.sqrMagnitude * 4;
-        // [1 / 0.01f -> 1 / 5]
-        var newDrag = 1 / Mathf.Clamp(diff.magnitude, 0.01f, 5f) * 5f;
-
+        
         if (!o.GetComponent<Pickupable>().IsCompound)
         {
-            o.GetComponent<Rigidbody>().AddForce(diff * acceleration);
-            o.GetComponent<Rigidbody>().drag = newDrag;
-
-            //o.GetComponent<Rigidbody>().AddForce(diff * 10);
-
+            var o_rigidBody = o.GetComponent<Rigidbody>();
+            o_rigidBody.velocity = diff * 10;
+            o_rigidBody.drag = 0f;
+            
             //o.transform.position = Vector3.Lerp(o.transform.position, mainCamera.transform.position + mainCamera.transform.forward * distance, Time.deltaTime * smooth);
             //o.transform.rotation = Quaternion.identity;
-        }
-        else if (o.GetComponent<Pickupable>().IsCompound) {
-            foreach (CompoundPickupable c in o.GetComponent<CompoundPickupable>().Family)
-            {
-                c.GetComponent<Rigidbody>().AddForce(diff * acceleration);
-                c.GetComponent<Rigidbody>().drag = newDrag;
+        } else if (o.GetComponent<Pickupable>().IsCompound) {
+            foreach (CompoundPickupable c in o.GetComponent<CompoundPickupable>().Family) {
+
+                var c_rigidBody = c.GetComponent<Rigidbody>();
+                c_rigidBody.velocity = diff * 10;
+                c.GetComponent<Rigidbody>().drag = 0f;
+
+                //c.GetComponent<Rigidbody>().AddForce(diff * acceleration);
+                //c.GetComponent<Rigidbody>().drag = newDrag;
 
                 //c.transform.rotation = Quaternion.identity;
                 //c.transform.position = Vector3.Lerp(c.transform.position, c.transform.position + diff, Time.deltaTime * smooth);
