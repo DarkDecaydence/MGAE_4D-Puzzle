@@ -1,0 +1,34 @@
+# FILE:Triangle insert for walls.obj
+newmtl GDLM1_SHADOW_MATERIAL
+Ka 0.228885 0.228885 0.228885
+Kd 0.228885 0.228885 0.228885
+Ks 0 0 0
+illum 2
+Ns 0
+newmtl PAINT_-_GOLDEN_OCHRE
+Ka 0.688 0.505882 0.229333
+Kd 0.648 0.476471 0.216
+Ks 0.0891005 0.0891005 0.09
+illum 2
+Ns 2.2
+newmtl PAINT_-_LIGHT_GRAY
+Ka 0.467765 0.467765 0.467765
+Kd 0.540235 0.540235 0.540235
+Ks 0.366667 0.366667 0.366667
+illum 2
+Ns 11
+newmtl BRICK_-_RUNNING_BOND
+Ka 0.459804 0.236471 0.197059
+Kd 0.42549 0.218824 0.182353
+Ks 0.152 0.152 0.152
+illum 2
+Ns 0
+map_Ka Brick Running Alpha GS.jpg
+map_Kd Brick Running Alpha GS.jpg
+map_Ks Brick Running Alpha GS.jpg
+newmtl GDLM5_OPAQUE
+Ka 0 0 0
+Kd 0 0 0
+Ks 0 0 0
+illum 2
+Ns 0
