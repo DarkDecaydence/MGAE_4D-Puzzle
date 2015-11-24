@@ -22,7 +22,7 @@ namespace Assets.Scripts_v02.FourthDimension {
         private int diffWOld { get; set; }
 
         private int diffW {
-            get { return Math.Abs(W - PickupObject.playerW); }
+            get { return Math.Abs(W - PickupObjectNew.PlayerW); }
         }
 
         private Color actualColor {
@@ -128,6 +128,22 @@ namespace Assets.Scripts_v02.FourthDimension {
                     t_tween = 0f;
                 }
             }
+        }
+
+        public bool CanGoWUp() {
+            foreach (IFourthDimension fD in gameObject.GetComponentsInChildren<IFourthDimension>()) {
+                if (!fD.CanGoWUp())
+                    return false;
+            }
+            return true;
+        }
+
+        public bool CanGoWDown() {
+            foreach (IFourthDimension fD in gameObject.GetComponentsInChildren<IFourthDimension>()) {
+                if (!fD.CanGoWDown())
+                    return false;
+            }
+            return true;
         }
 
         private void setMaterialRenderMode(Material m, float newMode) {

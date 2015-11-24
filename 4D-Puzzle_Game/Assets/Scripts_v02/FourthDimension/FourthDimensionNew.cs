@@ -23,7 +23,7 @@ namespace Assets.Scripts_v02.FourthDimension {
         private int diffWOld { get; set; }
 
         private int diffW {
-            get { return Math.Abs(W - PickupObject.playerW); }
+            get { return Math.Abs(W - PickupObjectNew.PlayerW); }
         }
 
         private Color actualColor {
@@ -37,7 +37,7 @@ namespace Assets.Scripts_v02.FourthDimension {
         }
         #endregion
 
-        void Start() {
+        protected virtual void Start() {
             if (gameObject.GetComponent<Renderer>() != null) { 
                 gObjRenderer = gameObject.GetComponent<Renderer>();
                 currentRenderMode = defaultRenderMode = gObjRenderer.material.GetFloat("_Mode");
@@ -46,7 +46,7 @@ namespace Assets.Scripts_v02.FourthDimension {
             SetW(W);
         }
 
-        void Update() {
+        protected virtual void Update() {
             if (diffWOld != diffW)
                 ChangeColor();
 
@@ -99,6 +99,9 @@ namespace Assets.Scripts_v02.FourthDimension {
                 }
             }
         }
+
+        public bool CanGoWUp() { return W > PickupObject.MinObjectW; }
+        public bool CanGoWDown() { return W < PickupObject.MaxObjectW; }
 
         private void setMaterialRenderMode(Material m) {
             m.SetFloat("_Mode", currentRenderMode);
