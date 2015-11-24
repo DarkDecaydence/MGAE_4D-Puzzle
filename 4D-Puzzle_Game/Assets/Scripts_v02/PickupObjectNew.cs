@@ -87,6 +87,14 @@ namespace Assets.Scripts_v02 {
                     if (p != null) {
                         carriedObject = p.PickUp();
                     }
+
+                    InteractiveDoor id = hit.collider.GetComponent<InteractiveDoor>();
+                    if (id != null) {
+                        foreach (string k in Inventory) {
+                            Debug.Log("Try key: " + k);
+                            id.DoAction(k);
+                        }
+                    }
                 }
             }
         }
