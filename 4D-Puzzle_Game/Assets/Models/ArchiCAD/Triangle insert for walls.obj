@@ -1,0 +1,104 @@
+# FILE Triangle insert for walls.obj
+mtllib /Users/Leon/Copenhagen Docs/Semester 1/Game Design/4D/MGAE_4D-Puzzle/4D-Puzzle_Game/Assets/Models/ArchiCAD/Triangle insert for walls.mtl
+trace_obj Triangle insert for walls.obj
+shadow_obj Triangle insert for walls.obj
+
+g STRUCTURAL_-_BEARING PAINT_-_GOLDEN_OCHRE
+
+usemtl PAINT_-_GOLDEN_OCHRE
+
+v 4933.84 0 -9956.48
+v 20431 0 -9956.48
+v 20431 100 -9956.48
+v 4933.84 100 -9956.48
+v 20431 100 -25453.6
+v 4933.84 100 -9956.48
+v 20431 100 -9956.48
+v 20431 0 -25453.6
+v 4933.84 0 -9956.48
+v 4933.84 100 -9956.48
+v 20431 100 -25453.6
+v 20431 0 -9956.48
+v 20431 0 -25453.6
+v 20431 100 -25453.6
+v 20431 100 -9956.48
+# vertex indices from 1 to 15
+
+s off
+vt 4.93384 0
+vt 20.431 0
+vt 20.431 0.1
+vt 4.93384 0.1
+# texture vertex indices from 1 to 4
+
+f  1/1 2/2 3/3 4/4
+vt 20.431 25.4536
+vt 4.93384 9.95648
+vt 20.431 9.95648
+# texture vertex indices from 5 to 7
+
+f  5/5 4/6 3/7
+vt 25.4536 0
+vt 9.95648 0
+vt 9.95648 0.1
+vt 25.4536 0.1
+# texture vertex indices from 8 to 11
+
+f  8/8 1/9 4/10 5/11
+vt 9.95648 0
+vt 25.4536 0
+vt 25.4536 0.1
+vt 9.95648 0.1
+# texture vertex indices from 12 to 15
+
+f  2/12 8/13 5/14 3/15
+
+g STRUCTURAL_-_BEARING PAINT_-_LIGHT_GRAY
+
+usemtl PAINT_-_LIGHT_GRAY
+
+v 4933.84 0 -9956.48
+v 20431 0 -25453.6
+v 20431 -200 -25453.6
+v 4933.84 -200 -9956.48
+v 20431 -200 -9956.48
+v 4933.84 -200 -9956.48
+v 20431 -200 -25453.6
+v 20431 0 -9956.48
+v 4933.84 0 -9956.48
+v 4933.84 -200 -9956.48
+v 20431 -200 -9956.48
+v 20431 0 -25453.6
+v 20431 0 -9956.48
+v 20431 -200 -9956.48
+v 20431 -200 -25453.6
+# vertex indices from 16 to 30
+
+s off
+vt 9.95648 0
+vt 25.4536 0
+vt 25.4536 -0.2
+vt 9.95648 -0.2
+# texture vertex indices from 16 to 19
+
+f  16/16 17/17 18/18 19/19
+vt 20.431 9.95648
+vt 4.93384 9.95648
+vt 20.431 25.4536
+# texture vertex indices from 20 to 22
+
+f  20/20 19/21 18/22
+vt 20.431 0
+vt 4.93384 0
+vt 4.93384 -0.2
+vt 20.431 -0.2
+# texture vertex indices from 23 to 26
+
+f  23/23 16/24 19/25 20/26
+vt 25.4536 0
+vt 9.95648 0
+vt 9.95648 -0.2
+vt 25.4536 -0.2
+# texture vertex indices from 27 to 30
+
+f  17/27 23/28 20/29 18/30
