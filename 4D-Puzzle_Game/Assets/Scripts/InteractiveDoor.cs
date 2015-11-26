@@ -3,7 +3,6 @@ using System.Collections;
 
 public class InteractiveDoor : MonoBehaviour {
     public Vector3 RotationAxis;
-    private float r_tween = 0;
     private bool isOpen;  // Could be changed to public and have open+close?
     public string key;
     public float OpenTime;
