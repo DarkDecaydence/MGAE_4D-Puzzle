@@ -14,18 +14,18 @@ Ns 0
 map_Ka Pine Grain 01-opt GS.jpg
 map_Kd Pine Grain 01-opt GS.jpg
 map_Ks Pine Grain 01-opt GS.jpg
-newmtl PAINT_-_PEACH
-Ka 0.626471 0.423216 0.356392
-Kd 0.714706 0.482824 0.406588
-Ks 0.0891005 0.0891005 0.09
-illum 2
-Ns 2.2
 newmtl PAINT_-_LIGHT_GRAY
 Ka 0.467765 0.467765 0.467765
 Kd 0.540235 0.540235 0.540235
 Ks 0.366667 0.366667 0.366667
 illum 2
 Ns 11
+newmtl PAINT_-_PEACH
+Ka 0.626471 0.423216 0.356392
+Kd 0.714706 0.482824 0.406588
+Ks 0.0891005 0.0891005 0.09
+illum 2
+Ns 2.2
 newmtl GLASS_-_CLEAR_FAST
 Ka 0.64 0.658667 0.648
 Kd 0.564706 0.581176 0.571765
@@ -33,33 +33,15 @@ Ks 1 1 1
 illum 2
 d 0.31
 Ns 79.52
-newmtl BRICK_-_RUNNING_BOND
-Ka 0.459804 0.236471 0.197059
-Kd 0.42549 0.218824 0.182353
-Ks 0.152 0.152 0.152
-illum 2
-Ns 0
-map_Ka Brick Running Alpha GS.jpg
-map_Kd Brick Running Alpha GS.jpg
-map_Ks Brick Running Alpha GS.jpg
-newmtl GDLM7_OPAQUE
+newmtl GDLM6_OPAQUE
 Ka 0 0 0
 Kd 0 0 0
 Ks 0 0 0
 illum 2
 Ns 0
-newmtl STUCCO_-_WHITE_FINE
-Ka 0.533647 0.538039 0.524863
-Kd 0.619412 0.62451 0.609216
-Ks 0.333686 0.333686 0.333686
-illum 2
-Ns 0
-map_Ka Stucco 02 GS.jpg
-map_Kd Stucco 02 GS.jpg
-map_Ks Stucco 02 GS.jpg
-newmtl PAINT_-_TITANIUM_WHITE
-Ka 0.8 0.8 0.8
-Kd 0.89 0.89 0.89
+newmtl PAINT_-_GOLDEN_OCHRE
+Ka 0.688 0.505882 0.229333
+Kd 0.648 0.476471 0.216
 Ks 0.0891005 0.0891005 0.09
 illum 2
 Ns 2.2
@@ -69,21 +51,30 @@ Kd 0.632118 0.622588 0.517765
 Ks 0.0891005 0.0891005 0.09
 illum 2
 Ns 2.2
-newmtl METAL_-_STAINLESS_STEEL
-Ka 0.80098 0.786078 0.808431
-Kd 0.286667 0.281333 0.289333
-Ks 0.923922 0.923922 0.923922
-illum 2
-Ns 18
-newmtl CONCRETE_-_02
-Ka 0.434824 0.437412 0.408941
-Kd 0.467765 0.470549 0.439922
-Ks 0.129799 0.126945 0.111355
+newmtl STUCCO_-_WHITE_FINE
+Ka 0.533647 0.538039 0.524863
+Kd 0.619412 0.62451 0.609216
+Ks 0.333686 0.333686 0.333686
 illum 2
 Ns 0
-map_Ka Concrete 4X4 Alpha GS.jpg
-map_Kd Concrete 4X4 Alpha GS.jpg
-map_Ks Concrete 4X4 Alpha GS.jpg
+map_Ka Stucco 02 GS.jpg
+map_Kd Stucco 02 GS.jpg
+map_Ks Stucco 02 GS.jpg
+newmtl STUCCO_-_YELLOW_ROUGH
+Ka 0.595686 0.538039 0.332157
+Kd 0.706314 0.637961 0.393843
+Ks 0.0793725 0.0774902 0.0759216
+illum 2
+Ns 0
+map_Ka Textured Render Yellow 01 GS.jpg
+map_Kd Textured Render Yellow 01 GS.jpg
+map_Ks Textured Render Yellow 01 GS.jpg
+newmtl PAINT_-_TITANIUM_WHITE
+Ka 0.8 0.8 0.8
+Kd 0.89 0.89 0.89
+Ks 0.0891005 0.0891005 0.09
+illum 2
+Ns 2.2
 newmtl AIR
 Ka 0.8 0.8 0.8
 Kd 0.89 0.89 0.89
@@ -109,28 +100,25 @@ Ns 0
 map_Ka Mahogany V GS.jpg
 map_Kd Mahogany V GS.jpg
 map_Ks Mahogany V GS.jpg
-newmtl PAINT_-_GOLDEN_OCHRE
-Ka 0.688 0.505882 0.229333
-Kd 0.648 0.476471 0.216
-Ks 0.0891005 0.0891005 0.09
-illum 2
-Ns 2.2
-newmtl STUCCO_-_YELLOW_ROUGH
-Ka 0.595686 0.538039 0.332157
-Kd 0.706314 0.637961 0.393843
-Ks 0.0793725 0.0774902 0.0759216
+newmtl CONCRETE_-_02
+Ka 0.434824 0.437412 0.408941
+Kd 0.467765 0.470549 0.439922
+Ks 0.129799 0.126945 0.111355
 illum 2
 Ns 0
-map_Ka Textured Render Yellow 01 GS.jpg
-map_Kd Textured Render Yellow 01 GS.jpg
-map_Ks Textured Render Yellow 01 GS.jpg
-newmtl PEN_MATERIAL92
-Ka 0.671138 0.500099 0.500099
-Kd 0.671138 0.500099 0.500099
-Ks 0 0 0
+map_Ka Concrete 4X4 Alpha GS.jpg
+map_Kd Concrete 4X4 Alpha GS.jpg
+map_Ks Concrete 4X4 Alpha GS.jpg
+newmtl BRICK_-_RUNNING_BOND
+Ka 0.459804 0.236471 0.197059
+Kd 0.42549 0.218824 0.182353
+Ks 0.152 0.152 0.152
 illum 2
 Ns 0
-newmtl GDLM19_PEN_MATERIAL0
+map_Ka Brick Running Alpha GS.jpg
+map_Kd Brick Running Alpha GS.jpg
+map_Ks Brick Running Alpha GS.jpg
+newmtl GDLM17_PEN_MATERIAL0
 Ka 0.844892 0.844892 0.844892
 Kd 0.844892 0.844892 0.844892
 Ks 0 0 0
@@ -148,3 +136,30 @@ Kd 0.459373 0.711864 0.668421
 Ks 0 0 0
 illum 2
 Ns 0
+newmtl TILES_-_LIGHT_BROWN_15X15
+Ka 0.632471 0.423529 0.268235
+Kd 0.456784 0.305882 0.193725
+Ks 0.27 0.27 0.27
+illum 2
+Ns 2.6
+map_Ka Tile Orange GS.jpg
+map_Kd Tile Orange GS.jpg
+map_Ks Tile Orange GS.jpg
+newmtl CONCRETE_-_04
+Ka 0.322824 0.324745 0.303608
+Kd 0.474353 0.477176 0.446118
+Ks 0.356948 0.3491 0.306226
+illum 2
+Ns 0
+map_Ka Poured Concrete 01 GS.jpg
+map_Kd Poured Concrete 01 GS.jpg
+map_Ks Poured Concrete 01 GS.jpg
+newmtl WOOD_-_OAK_LIGHT
+Ka 0.553412 0.412588 0.202588
+Kd 0.746667 0.556667 0.273333
+Ks 0.0657053 0.0519249 0.045153
+illum 2
+Ns 5
+map_Ka Oak Light Base GS.jpg
+map_Kd Oak Light Base GS.jpg
+map_Ks Oak Light Base GS.jpg
