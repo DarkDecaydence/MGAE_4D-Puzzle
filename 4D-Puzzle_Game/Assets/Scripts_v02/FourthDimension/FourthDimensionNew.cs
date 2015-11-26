@@ -59,6 +59,11 @@ namespace Assets.Scripts_v02.FourthDimension {
             gameObject.layer = 8 + W;
         }
 
+        public void PushW(int wDiff) {
+            W += wDiff;
+            gameObject.layer += wDiff;
+        }
+
         private void ChangeColor() {
             var currentColor =
                 diffWOld == 0 ? new Color(1, 1, 1, 1) :
@@ -100,8 +105,8 @@ namespace Assets.Scripts_v02.FourthDimension {
             }
         }
 
-        public bool CanGoWUp() { return W > PickupObject.MinObjectW; }
-        public bool CanGoWDown() { return W < PickupObject.MaxObjectW; }
+        public bool CanGoWUp() { return W < PickupObject.MaxObjectW; } 
+        public bool CanGoWDown() { return W > PickupObject.MinObjectW; }
 
         private void setMaterialRenderMode(Material m) {
             m.SetFloat("_Mode", currentRenderMode);
