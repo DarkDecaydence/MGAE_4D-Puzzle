@@ -58,13 +58,18 @@ namespace Assets.Scripts_v02.FourthDimension {
 
             if (moveAllowed) {
                 foreach (Transform t in allGameObjects) {
-                    if (t.Equals(gameObject.transform)) continue;
+                    if (t.Equals(transform)) {
+                        W = newW;
+                        gameObject.layer = 8 + W;
+                        continue;
+                    }
 
                     // Move 4D children
                     var childFD = t.gameObject.GetComponent<IFourthDimension>();
-                    if (childFD == null) {
+                    if (childFD != null) {
                         childFD.SetW(newW);
                     } else {
+                        W = newW;
                         t.gameObject.layer = 8 + W;
                     }
                 }
@@ -102,7 +107,7 @@ namespace Assets.Scripts_v02.FourthDimension {
 
         private void TweenChangeColor() {
             if (targetColorQueue.Count > 0) {
-                // Set up Tween
+                // Setup Tween
                 var originColor = originColorQueue[0];
                 var targetColor = targetColorQueue[0];
 
@@ -117,7 +122,7 @@ namespace Assets.Scripts_v02.FourthDimension {
                         continue;
                     }
 
-                    // Yield if child contains new 4D Script
+                    // Yield if child contains new 4D Script or BillboardRenderer
                     var skipCriteria =
                         (curRenderer.gameObject.GetComponent<IFourthDimension>() != null && !curRenderer.gameObject.Equals(gameObject)) ||
                         curRenderer is BillboardRenderer;
@@ -168,7 +173,7 @@ namespace Assets.Scripts_v02.FourthDimension {
                     return false;
             }
 
-            if (!(W < PickupObjectNew.MaxObjectW)) { return false; }
+            if (W >= PickupObjectNew.MaxObjectW) { return false; }
             
             return true;
         }
@@ -182,7 +187,7 @@ namespace Assets.Scripts_v02.FourthDimension {
                     return false;
             }
 
-            if (!(W > PickupObjectNew.MinObjectW)) { return false; }
+            if (W <= PickupObjectNew.MinObjectW) { return false; }
 
             return true;
         }
