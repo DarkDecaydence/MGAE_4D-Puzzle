@@ -41,7 +41,7 @@ namespace Assets.Scripts_v02.FourthDimension {
             foreach (Renderer r in potentialRenderers)
                 allRenderers.Add(r);
 
-            SetW(W);
+            PushW(8 + W);
         }
 
         protected virtual void Update() {
