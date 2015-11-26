@@ -50,12 +50,16 @@ namespace Assets.Scripts_v02 {
             if (shiftUp && PlayerW < 4) {
                 PushW(1);
                 PlayerW = W;
+                if (IsCarrying)
+                    carriedObject.GetComponent<IFourthDimension>().PushW(1);
             }
 
             var shiftDown = Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.DownArrow);
             if (shiftDown && PlayerW > 0) {
                 PushW(-1);
                 PlayerW = W;
+                if (IsCarrying)
+                    carriedObject.GetComponent<IFourthDimension>().PushW(-1);
             }
         }
 
