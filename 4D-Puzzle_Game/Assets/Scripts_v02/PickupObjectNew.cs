@@ -8,8 +8,8 @@ namespace Assets.Scripts_v02 {
 
         #region Fields & Properties
         public static int PlayerW;
-        public static int MaxObjectW;
-        public static int MinObjectW;
+        public static int MaxObjectW = 4;
+        public static int MinObjectW = 0;
 
         // Public fields
         public List<string> Inventory = new List<string>(1);
