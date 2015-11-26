@@ -36,7 +36,7 @@ namespace Assets.Scripts_v02.FourthDimension {
         }
         #endregion
 
-        void Start() {
+        protected virtual void Start() {
             var potentialRenderers = new List<Renderer>(gameObject.GetComponentsInChildren<Renderer>());
             foreach (Renderer r in potentialRenderers)
                 allRenderers.Add(r);
@@ -44,7 +44,7 @@ namespace Assets.Scripts_v02.FourthDimension {
             SetW(W);
         }
 
-        void Update() {
+        protected virtual void Update() {
             if (diffWOld != diffW)
                 ChangeColor();
 
@@ -53,14 +53,45 @@ namespace Assets.Scripts_v02.FourthDimension {
         }
 
         public void SetW(int newW) {
-            W = newW;
+            var moveAllowed = newW - W < 0 ? CanGoWDown() : CanGoWUp();
             var allGameObjects = gameObject.GetComponentsInChildren<Transform>();
-            foreach (Transform t in allGameObjects) {
-                // Yield if child contains new 4D Script
-                if (t.gameObject.GetComponent<IFourthDimension>() != null)
-                    continue;
 
-                t.gameObject.layer = 8 + W;
+            if (moveAllowed) {
+                foreach (Transform t in allGameObjects) {
+                    if (t.Equals(transform)) {
+                        W = newW;
+                        gameObject.layer = 8 + W;
+                        continue;
+                    }
+
+                    // Move 4D children
+                    var childFD = t.gameObject.GetComponent<IFourthDimension>();
+                    if (childFD != null) {
+                        childFD.SetW(newW);
+                    } else {
+                        W = newW;
+                        t.gameObject.layer = 8 + W;
+                    }
+                }
+            }
+        }
+
+        public void PushW(int wDiff) {
+            var moveAllowed = wDiff < 0 ? CanGoWDown() : CanGoWUp();
+            var allGameObjects = gameObject.GetComponentsInChildren<Transform>();
+
+            if (moveAllowed) {
+                foreach (Transform t in allGameObjects) {
+                    if (t.Equals(gameObject.transform)) continue;
+
+                    // Move 4D children
+                    var childFD = t.gameObject.GetComponent<IFourthDimension>();
+                    if (childFD != null) {
+                        childFD.PushW(wDiff);
+                    } else {
+                        t.gameObject.layer += wDiff;
+                    }
+                }
             }
         }
 
@@ -76,7 +107,7 @@ namespace Assets.Scripts_v02.FourthDimension {
 
         private void TweenChangeColor() {
             if (targetColorQueue.Count > 0) {
-                // Set up Tween
+                // Setup Tween
                 var originColor = originColorQueue[0];
                 var targetColor = targetColorQueue[0];
 
@@ -90,9 +121,12 @@ namespace Assets.Scripts_v02.FourthDimension {
                         allRenderers.Remove(curRenderer);
                         continue;
                     }
-                    // Yield if child contains new 4D Script
-                    if (curRenderer.gameObject.GetComponent<IFourthDimension>() != null ||
-                        curRenderer is BillboardRenderer) { continue; }
+
+                    // Yield if child contains new 4D Script or BillboardRenderer
+                    var skipCriteria =
+                        (curRenderer.gameObject.GetComponent<IFourthDimension>() != null && !curRenderer.gameObject.Equals(gameObject)) ||
+                        curRenderer is BillboardRenderer;
+                    if (skipCriteria) { continue; }
 
                     IRenderCorrecter correcter = null;
                     IRenderCorrecter[] correcters = curRenderer.gameObject.GetComponentsInParent<IRenderCorrecter>();
@@ -131,18 +165,30 @@ namespace Assets.Scripts_v02.FourthDimension {
         }
 
         public bool CanGoWUp() {
-            foreach (IFourthDimension fD in gameObject.GetComponentsInChildren<IFourthDimension>()) {
-                if (!fD.CanGoWUp())
+            foreach (Transform t in gameObject.GetComponentsInChildren<Transform>()) {
+                if (t.Equals(gameObject.transform)) continue;
+
+                if (t.GetComponent<IFourthDimension>() != null &&
+                    !t.GetComponent<IFourthDimension>().CanGoWUp())
                     return false;
             }
+
+            if (W >= PickupObjectNew.MaxObjectW) { return false; }
+            
             return true;
         }
 
         public bool CanGoWDown() {
-            foreach (IFourthDimension fD in gameObject.GetComponentsInChildren<IFourthDimension>()) {
-                if (!fD.CanGoWDown())
+            foreach (Transform t in gameObject.GetComponentsInChildren<Transform>()) {
+                if (t.Equals(gameObject.transform)) continue;
+
+                if (t.GetComponent<IFourthDimension>() != null &&
+                    !t.GetComponent<IFourthDimension>().CanGoWUp())
                     return false;
             }
+
+            if (W <= PickupObjectNew.MinObjectW) { return false; }
+
             return true;
         }
 

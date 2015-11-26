@@ -8,8 +8,8 @@ namespace Assets.Scripts_v02 {
 
         #region Fields & Properties
         public static int PlayerW;
-        public static int MaxObjectW;
-        public static int MinObjectW;
+        public static int MaxObjectW = 4;
+        public static int MinObjectW = 0;
 
         // Public fields
         public List<string> Inventory = new List<string>(1);
@@ -48,13 +48,13 @@ namespace Assets.Scripts_v02 {
 
             var shiftUp = Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.UpArrow);
             if (shiftUp && PlayerW < 4) {
-                SetW(W + 1);
+                PushW(1);
                 PlayerW = W;
             }
 
             var shiftDown = Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.DownArrow);
             if (shiftDown && PlayerW > 0) {
-                SetW(W - 1);
+                PushW(-1);
                 PlayerW = W;
             }
         }
@@ -62,7 +62,7 @@ namespace Assets.Scripts_v02 {
         private void Carry() {
             if (IsCarrying) {
                 CheckDistance();
-
+                
                 Vector3 diff = mainCamera.transform.position + mainCamera.transform.forward * carryingDistance - carriedObject.transform.position;
                 Vector3 gO_velocity = diff * 10;
 
@@ -108,7 +108,8 @@ namespace Assets.Scripts_v02 {
         }
 
         private void CheckDistance() {
-            carryingDistance += Input.GetAxis("Mouse ScrollWheel");
+            var newCarryingDist = carryingDistance + Input.GetAxis("Mouse ScrollWheel");
+            carryingDistance = Mathf.Clamp(newCarryingDist, 1, Distance);
         }
     }
 }
