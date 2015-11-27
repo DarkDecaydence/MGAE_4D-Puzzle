@@ -12,6 +12,7 @@ namespace Assets.Scripts_v02 {
         public static int PlayerW;
         public static int MaxObjectW = 2;
         public static int MinObjectW = 0;
+        public static int MaxPlayerW = 2;
 
         // Public fields
         public List<string> Inventory = new List<string>(1);
@@ -49,7 +50,7 @@ namespace Assets.Scripts_v02 {
             }
 
             var shiftUp = Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.UpArrow);
-            if (shiftUp && PlayerW < 4) {
+            if (shiftUp && PlayerW < MaxPlayerW) {
                 PushW(1);
                 PlayerW = W;
                 if (IsCarrying) {
