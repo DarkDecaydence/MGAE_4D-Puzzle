@@ -82,7 +82,11 @@ namespace Assets.Scripts_v02.FourthDimension {
 
             if (moveAllowed) {
                 foreach (Transform t in allGameObjects) {
-                    if (t.Equals(gameObject.transform)) continue;
+                    if (t.Equals(transform)) {
+                        W += wDiff;
+                        gameObject.layer += wDiff;
+                        continue;
+                    }
 
                     // Move 4D children
                     var childFD = t.gameObject.GetComponent<IFourthDimension>();
@@ -183,7 +187,7 @@ namespace Assets.Scripts_v02.FourthDimension {
                 if (t.Equals(gameObject.transform)) continue;
 
                 if (t.GetComponent<IFourthDimension>() != null &&
-                    !t.GetComponent<IFourthDimension>().CanGoWUp())
+                    !t.GetComponent<IFourthDimension>().CanGoWDown())
                     return false;
             }
 
