@@ -96,7 +96,7 @@ namespace Assets.Scripts_v02.FourthDimension {
         private void ChangeColor() {
             var currentColor =
                 diffWOld == 0 ? new Color(1, 1, 1, 1) :
-                diffWOld == 1 ? new Color(1, 1, 1, 0.15f) :
+                diffWOld == 1 ? new Color(1, 1, 1, 0.09f) :
                                 new Color(1, 1, 1, 0f);
 
             originColorQueue.Add(currentColor);
@@ -149,6 +149,7 @@ namespace Assets.Scripts_v02.FourthDimension {
 
                         Color tweenedColor = m.color;
                         tweenedColor.a = tweenedAlpha;
+
                         m.color = tweenedColor;
 
                         if (diffW == 0 && !isDefaultRender && Mathf.Approximately(t_tween, 1f)) {
