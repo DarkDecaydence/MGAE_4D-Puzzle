@@ -149,6 +149,7 @@ namespace Assets.Scripts_v02.FourthDimension {
 
                         Color tweenedColor = m.color;
                         tweenedColor.a = tweenedAlpha;
+
                         m.color = tweenedColor;
 
                         if (diffW == 0 && !isDefaultRender && Mathf.Approximately(t_tween, 1f)) {
