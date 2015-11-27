@@ -60,7 +60,8 @@ namespace Assets.Scripts_v02.FourthDimension {
         }
 
         public void PushW(int wDiff) {
-            SetW(W + wDiff);
+            W += wDiff;
+            gameObject.layer = 8 + W;
         }
 
         private void ChangeColor() {

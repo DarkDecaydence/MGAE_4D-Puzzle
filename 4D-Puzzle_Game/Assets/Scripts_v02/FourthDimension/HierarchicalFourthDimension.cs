@@ -41,7 +41,7 @@ namespace Assets.Scripts_v02.FourthDimension {
             foreach (Renderer r in potentialRenderers)
                 allRenderers.Add(r);
 
-            PushW(8 + W);
+            PushW(W);
         }
 
         protected virtual void Update() {
@@ -58,15 +58,9 @@ namespace Assets.Scripts_v02.FourthDimension {
 
             if (moveAllowed) {
                 foreach (Transform t in allGameObjects) {
-                    if (t.Equals(transform)) {
-                        W = newW;
-                        gameObject.layer = 8 + W;
-                        continue;
-                    }
-
                     // Move 4D children
                     var childFD = t.gameObject.GetComponent<IFourthDimension>();
-                    if (childFD != null) {
+                    if (childFD != null && !t.Equals(transform)) {
                         childFD.SetW(newW);
                     } else {
                         W = newW;
@@ -82,18 +76,13 @@ namespace Assets.Scripts_v02.FourthDimension {
 
             if (moveAllowed) {
                 foreach (Transform t in allGameObjects) {
-                    if (t.Equals(transform)) {
-                        W += wDiff;
-                        gameObject.layer += wDiff;
-                        continue;
-                    }
-
                     // Move 4D children
                     var childFD = t.gameObject.GetComponent<IFourthDimension>();
-                    if (childFD != null) {
+                    if (childFD != null && !t.Equals(transform)) {
                         childFD.PushW(wDiff);
                     } else {
-                        t.gameObject.layer += wDiff;
+                        W += wDiff;
+                        t.gameObject.layer = 8 + W;
                     }
                 }
             }
