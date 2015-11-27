@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections.Generic;
 using Assets.Scripts_v02.FourthDimension;
 using Assets.Scripts_v02.Pickupables;
+using Assets.Scripts_v02.Interactives;
 
 namespace Assets.Scripts_v02 {
     public class PickupObjectNew : FourthDimensionNew {
@@ -50,12 +52,16 @@ namespace Assets.Scripts_v02 {
             if (shiftUp && PlayerW < 4) {
                 PushW(1);
                 PlayerW = W;
+                if (IsCarrying)
+                    carriedObject.GetComponent<IFourthDimension>().PushW(1);
             }
 
             var shiftDown = Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.DownArrow);
             if (shiftDown && PlayerW > 0) {
                 PushW(-1);
                 PlayerW = W;
+                if (IsCarrying)
+                    carriedObject.GetComponent<IFourthDimension>().PushW(-1);
             }
         }
 
@@ -86,6 +92,16 @@ namespace Assets.Scripts_v02 {
                     IPickupable p = hit.collider.GetComponent<IPickupable>();
                     if (p != null) {
                         carriedObject = p.PickUp();
+                    }
+
+                    IUsable i = hit.collider.GetComponent<IUsable>();
+                    if (i != null) {
+                        var correctKey = String.Empty;
+                        foreach (string s in Inventory)
+                            correctKey = i.Interact(s) ? s : String.Empty;
+
+                        if (!String.IsNullOrEmpty(correctKey))
+                            Inventory.Remove(correctKey);
                     }
 
                     InteractiveDoor id = hit.collider.GetComponent<InteractiveDoor>();
