@@ -34,10 +34,10 @@ namespace Assets.Scripts_v02.FourthDimension {
                 }
             }
         }
-        
         #endregion
 
         protected virtual void Start() {
+
             var potentialRenderers = new List<Renderer>(gameObject.GetComponentsInChildren<Renderer>());
             foreach (Renderer r in potentialRenderers)
                 allRenderers.Add(r);
@@ -96,7 +96,7 @@ namespace Assets.Scripts_v02.FourthDimension {
         private void ChangeColor() {
             var currentColor =
                 diffWOld == 0 ? new Color(1, 1, 1, 1) :
-                diffWOld == 1 ? new Color(1, 1, 1, 0.15f) :
+                diffWOld == 1 ? new Color(1, 1, 1, 0.09f) :
                                 new Color(1, 1, 1, 0f);
 
             originColorQueue.Add(currentColor);
@@ -110,7 +110,8 @@ namespace Assets.Scripts_v02.FourthDimension {
                 var targetColor = targetColorQueue[0];
 
                 t_tween = Mathf.Clamp01(t_tween + Time.deltaTime * tween_speed);
-                var tweenedColor = Color.Lerp(originColor, targetColor, t_tween);
+                var tweenedAlpha = Mathf.Lerp(originColor.a, targetColor.a, t_tween);
+                //var tweenedColor = Color.Lerp(originColor, targetColor, t_tween);
 
                 // Iterate and Tween Colors
                 for (int i = 0; i < allRenderers.Count; i++) {
@@ -145,6 +146,9 @@ namespace Assets.Scripts_v02.FourthDimension {
                         var isDefaultRender = Mathf.Approximately(m.GetFloat("_Mode"), defaultRenderMode);
                         if (diffW > 0 && isDefaultRender)
                             setMaterialRenderMode(m, 2f);
+
+                        Color tweenedColor = m.color;
+                        tweenedColor.a = tweenedAlpha;
 
                         m.color = tweenedColor;
 
