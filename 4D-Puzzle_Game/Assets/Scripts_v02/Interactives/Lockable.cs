@@ -11,11 +11,11 @@ namespace Assets.Scripts_v02.Interactives {
 
         private int currentActivates;
 
-        public bool Interact(object[] parameter) {
+        public bool Interact(string parameter) {
             TryUnlock();
             if (!IsLocked) {
                 foreach (IUsable u in Targets)
-                    u.Interact(new object[] { String.Empty });
+                    u.Interact(String.Empty);
                 return true;
             } else return false;
         }

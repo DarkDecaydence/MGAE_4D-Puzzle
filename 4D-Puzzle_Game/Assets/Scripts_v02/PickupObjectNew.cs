@@ -100,9 +100,8 @@ namespace Assets.Scripts_v02 {
                         foreach (string s in Inventory)
                             correctKey = i.Interact(s) ? s : String.Empty;
 
-                        if (!String.IsNullOrEmpty(correctKey)) {
+                        if (!String.IsNullOrEmpty(correctKey))
                             Inventory.Remove(correctKey);
-                        }
                     }
 
                     InteractiveDoor id = hit.collider.GetComponent<InteractiveDoor>();
