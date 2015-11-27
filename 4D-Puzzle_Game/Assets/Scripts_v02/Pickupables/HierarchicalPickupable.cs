@@ -43,7 +43,6 @@ namespace Assets.Scripts_v02.Pickupables {
                     return gameObject;
                 }
             } else {
-                Debug.Log("Wut?");
                 return null;
             }
         }

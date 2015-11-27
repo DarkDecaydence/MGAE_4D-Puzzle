@@ -34,6 +34,7 @@ namespace Assets.Scripts_v02.FourthDimension {
                 }
             }
         }
+        
         #endregion
 
         protected virtual void Start() {
@@ -41,7 +42,7 @@ namespace Assets.Scripts_v02.FourthDimension {
             foreach (Renderer r in potentialRenderers)
                 allRenderers.Add(r);
 
-            PushW(W);
+            PushW(0);
         }
 
         protected virtual void Update() {
@@ -57,16 +58,18 @@ namespace Assets.Scripts_v02.FourthDimension {
             var allGameObjects = gameObject.GetComponentsInChildren<Transform>();
 
             if (moveAllowed) {
+                W = newW;
                 foreach (Transform t in allGameObjects) {
                     // Move 4D children
                     var childFD = t.gameObject.GetComponent<IFourthDimension>();
                     if (childFD != null && !t.Equals(transform)) {
                         childFD.SetW(newW);
                     } else {
-                        W = newW;
                         t.gameObject.layer = 8 + W;
                     }
                 }
+            } else {
+                gameObject.layer = 8 + W;
             }
         }
 
@@ -75,16 +78,18 @@ namespace Assets.Scripts_v02.FourthDimension {
             var allGameObjects = gameObject.GetComponentsInChildren<Transform>();
 
             if (moveAllowed) {
+                W += wDiff;
                 foreach (Transform t in allGameObjects) {
                     // Move 4D children
                     var childFD = t.gameObject.GetComponent<IFourthDimension>();
                     if (childFD != null && !t.Equals(transform)) {
                         childFD.PushW(wDiff);
                     } else {
-                        W += wDiff;
                         t.gameObject.layer = 8 + W;
                     }
                 }
+            } else {
+                gameObject.layer = 8 + W;
             }
         }
 
@@ -162,8 +167,9 @@ namespace Assets.Scripts_v02.FourthDimension {
                 if (t.Equals(gameObject.transform)) continue;
 
                 if (t.GetComponent<IFourthDimension>() != null &&
-                    !t.GetComponent<IFourthDimension>().CanGoWUp())
+                    !t.GetComponent<IFourthDimension>().CanGoWUp()) {
                     return false;
+                }
             }
 
             if (W >= PickupObjectNew.MaxObjectW) { return false; }

@@ -105,8 +105,8 @@ namespace Assets.Scripts_v02.FourthDimension {
             }
         }
 
-        public bool CanGoWUp() { return W < PickupObject.MaxObjectW; } 
-        public bool CanGoWDown() { return W > PickupObject.MinObjectW; }
+        public bool CanGoWUp() { return W < PickupObjectNew.MaxObjectW; } 
+        public bool CanGoWDown() { return W > PickupObjectNew.MinObjectW; }
 
         private void setMaterialRenderMode(Material m) {
             m.SetFloat("_Mode", currentRenderMode);
