@@ -53,16 +53,22 @@ namespace Assets.Scripts_v02 {
             if (shiftUp && PlayerW < MaxPlayerW) {
                 PushW(1);
                 PlayerW = W;
-                if (IsCarrying)
-                    carriedObject.GetComponent<IFourthDimension>().PushW(1);
+                if (IsCarrying) {
+                    var cObj_FD = carriedObject.GetComponent<IFourthDimension>();
+                    if (cObj_FD.CanGoWUp()) cObj_FD.PushW(1);
+                    else carriedObject.GetComponent<IPickupable>().Drop();
+                }
             }
 
             var shiftDown = Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.DownArrow);
             if (shiftDown && PlayerW > 0) {
                 PushW(-1);
                 PlayerW = W;
-                if (IsCarrying)
-                    carriedObject.GetComponent<IFourthDimension>().PushW(-1);
+                if (IsCarrying) {
+                    var cObj_FD = carriedObject.GetComponent<IFourthDimension>();
+                    if (cObj_FD.CanGoWDown()) cObj_FD.PushW(-1);
+                    else carriedObject.GetComponent<IPickupable>().Drop();
+                }
             }
         }
 
