@@ -164,8 +164,9 @@ namespace Assets.Scripts_v02.FourthDimension {
                 if (t.Equals(gameObject.transform)) continue;
 
                 if (t.GetComponent<IFourthDimension>() != null &&
-                    !t.GetComponent<IFourthDimension>().CanGoWUp())
+                    !t.GetComponent<IFourthDimension>().CanGoWUp()) {
                     return false;
+                }
             }
 
             if (W >= PickupObjectNew.MaxObjectW) { return false; }

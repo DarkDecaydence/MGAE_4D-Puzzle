@@ -10,7 +10,7 @@ namespace Assets.Scripts_v02 {
 
         #region Fields & Properties
         public static int PlayerW;
-        public static int MaxObjectW = 4;
+        public static int MaxObjectW = 2;
         public static int MinObjectW = 0;
 
         // Public fields
