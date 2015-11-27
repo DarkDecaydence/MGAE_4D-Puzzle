@@ -56,7 +56,7 @@ namespace Assets.Scripts_v02 {
                 if (IsCarrying) {
                     var cObj_FD = carriedObject.GetComponent<IFourthDimension>();
                     if (cObj_FD.CanGoWUp()) cObj_FD.PushW(1);
-                    else carriedObject.GetComponent<IPickupable>().Drop();
+                    else Drop();
                 }
             }
 
@@ -67,7 +67,7 @@ namespace Assets.Scripts_v02 {
                 if (IsCarrying) {
                     var cObj_FD = carriedObject.GetComponent<IFourthDimension>();
                     if (cObj_FD.CanGoWDown()) cObj_FD.PushW(-1);
-                    else carriedObject.GetComponent<IPickupable>().Drop();
+                    else Drop();
                 }
             }
         }
@@ -124,10 +124,13 @@ namespace Assets.Scripts_v02 {
 
         private void CheckDrop() {
             if (Input.GetKeyDown(KeyCode.E)) {
-                carriedObject.GetComponent<IPickupable>().Drop();
-                carriedObject = null;
-                carryingDistance = defaultCarryingDistance;
+                Drop();
             }
+        }
+        private void Drop() {
+            carriedObject.GetComponent<IPickupable>().Drop();
+            carriedObject = null;
+            carryingDistance = defaultCarryingDistance;
         }
 
         private void CheckDistance() {

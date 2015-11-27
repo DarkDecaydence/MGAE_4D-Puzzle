@@ -68,6 +68,8 @@ namespace Assets.Scripts_v02.FourthDimension {
                         t.gameObject.layer = 8 + W;
                     }
                 }
+            } else {
+                gameObject.layer = 8 + W;
             }
         }
 
@@ -78,7 +80,6 @@ namespace Assets.Scripts_v02.FourthDimension {
             if (moveAllowed) {
                 W += wDiff;
                 foreach (Transform t in allGameObjects) {
-
                     // Move 4D children
                     var childFD = t.gameObject.GetComponent<IFourthDimension>();
                     if (childFD != null && !t.Equals(transform)) {
@@ -87,6 +88,8 @@ namespace Assets.Scripts_v02.FourthDimension {
                         t.gameObject.layer = 8 + W;
                     }
                 }
+            } else {
+                gameObject.layer = 8 + W;
             }
         }
 
@@ -164,8 +167,9 @@ namespace Assets.Scripts_v02.FourthDimension {
                 if (t.Equals(gameObject.transform)) continue;
 
                 if (t.GetComponent<IFourthDimension>() != null &&
-                    !t.GetComponent<IFourthDimension>().CanGoWUp())
+                    !t.GetComponent<IFourthDimension>().CanGoWUp()) {
                     return false;
+                }
             }
 
             if (W >= PickupObjectNew.MaxObjectW) { return false; }
