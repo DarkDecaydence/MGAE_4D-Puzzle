@@ -67,7 +67,7 @@ namespace Assets.Scripts_v02.FourthDimension {
         private void ChangeColor() {
             var currentColor =
                 diffWOld == 0 ? new Color(1, 1, 1, 1) :
-                diffWOld == 1 ? new Color(1, 1, 1, 0.33f) :
+                diffWOld == 1 ? new Color(1, 1, 1, 0.09f) :
                                 new Color(1, 1, 1, 0f);
 
             originColorQueue.Add(currentColor);
