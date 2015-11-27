@@ -1,10 +1,11 @@
-﻿using UnityEngine;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Assets.Scripts_v02.Interactives {
     public class LockedInteractable : ILockable, IUsable {
 
+        public List<string> PossibleKeys = new List<string>();
         public List<IUsable> Targets = new List<IUsable>();
         public bool IsLocked;
         public int RequiredActivates;
@@ -12,18 +13,20 @@ namespace Assets.Scripts_v02.Interactives {
         private int currentActivates;
 
         public bool Interact(string parameter) {
-            TryUnlock();
+            TryUnlock(parameter);
             if (!IsLocked) {
                 foreach (IUsable u in Targets)
-                    u.Interact(String.Empty);
+                    u.Interact(parameter);
                 return true;
             } else return false;
         }
 
-        public void TryUnlock() {
-            currentActivates++;
-            if (currentActivates >= RequiredActivates)
-                IsLocked = !IsLocked;
+        public void TryUnlock(string parameter) {
+            if (PossibleKeys.Any(s => s.Equals(parameter))) {
+                currentActivates++;
+                if (currentActivates >= RequiredActivates)
+                    IsLocked = !IsLocked;
+            }
         }
     }
 }

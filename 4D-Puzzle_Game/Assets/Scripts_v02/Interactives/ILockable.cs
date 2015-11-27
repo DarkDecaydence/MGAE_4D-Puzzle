@@ -5,6 +5,6 @@ using System.Text;
 
 namespace Assets.Scripts_v02.Interactives {
     interface ILockable {
-        void TryUnlock();
+        void TryUnlock(string parameter);
     }
 }
