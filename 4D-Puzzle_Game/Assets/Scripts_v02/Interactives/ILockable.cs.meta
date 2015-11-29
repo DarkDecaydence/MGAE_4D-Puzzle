@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+<<<<<<< HEAD:4D-Puzzle_Game/Assets/Scripts_v02/Interactives/ILockable.cs.meta
+guid: 1aaa36178d96ec4468c06d2d62fbe4ec
+timeCreated: 1448584365
+=======
+guid: 695312beabef6438bbab83ad9f49ee74
+timeCreated: 1448584254
+>>>>>>> 78f13c064ae88607a5adf751b77fdd578cfe7c8a:4D-Puzzle_Game/Assets/Scripts_v02/Interactives/ILockable.cs.meta
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

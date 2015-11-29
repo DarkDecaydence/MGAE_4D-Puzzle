@@ -1,15 +1,18 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections.Generic;
 using Assets.Scripts_v02.FourthDimension;
 using Assets.Scripts_v02.Pickupables;
+using Assets.Scripts_v02.Interactives;
 
 namespace Assets.Scripts_v02 {
     public class PickupObjectNew : FourthDimensionNew {
 
         #region Fields & Properties
         public static int PlayerW;
-        public static int MaxObjectW;
-        public static int MinObjectW;
+        public static int MaxObjectW = 2;
+        public static int MinObjectW = 0;
+        public static int MaxPlayerW = 2;
 
         // Public fields
         public List<string> Inventory = new List<string>(1);
@@ -47,22 +50,32 @@ namespace Assets.Scripts_v02 {
             }
 
             var shiftUp = Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.UpArrow);
-            if (shiftUp && PlayerW < 4) {
-                SetW(W + 1);
+            if (shiftUp && PlayerW < MaxPlayerW) {
+                PushW(1);
                 PlayerW = W;
+                if (IsCarrying) {
+                    var cObj_FD = carriedObject.GetComponent<IFourthDimension>();
+                    if (cObj_FD.CanGoWUp()) cObj_FD.PushW(1);
+                    else Drop();
+                }
             }
 
             var shiftDown = Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.DownArrow);
             if (shiftDown && PlayerW > 0) {
-                SetW(W - 1);
+                PushW(-1);
                 PlayerW = W;
+                if (IsCarrying) {
+                    var cObj_FD = carriedObject.GetComponent<IFourthDimension>();
+                    if (cObj_FD.CanGoWDown()) cObj_FD.PushW(-1);
+                    else Drop();
+                }
             }
         }
 
         private void Carry() {
             if (IsCarrying) {
                 CheckDistance();
-
+                
                 Vector3 diff = mainCamera.transform.position + mainCamera.transform.forward * carryingDistance - carriedObject.transform.position;
                 Vector3 gO_velocity = diff * 10;
 
@@ -88,6 +101,16 @@ namespace Assets.Scripts_v02 {
                         carriedObject = p.PickUp();
                     }
 
+                    IUsable i = hit.collider.GetComponent<IUsable>();
+                    if (i != null) {
+                        var correctKey = String.Empty;
+                        foreach (string s in Inventory)
+                            correctKey = i.Interact(s) ? s : String.Empty;
+
+                        if (!String.IsNullOrEmpty(correctKey))
+                            Inventory.Remove(correctKey);
+                    }
+
                     InteractiveDoor id = hit.collider.GetComponent<InteractiveDoor>();
                     if (id != null) {
                         foreach (string k in Inventory) {
@@ -101,14 +124,18 @@ namespace Assets.Scripts_v02 {
 
         private void CheckDrop() {
             if (Input.GetKeyDown(KeyCode.E)) {
-                carriedObject.GetComponent<IPickupable>().Drop();
-                carriedObject = null;
-                carryingDistance = defaultCarryingDistance;
+                Drop();
             }
+        }
+        private void Drop() {
+            carriedObject.GetComponent<IPickupable>().Drop();
+            carriedObject = null;
+            carryingDistance = defaultCarryingDistance;
         }
 
         private void CheckDistance() {
-            carryingDistance += Input.GetAxis("Mouse ScrollWheel");
+            var newCarryingDist = carryingDistance + Input.GetAxis("Mouse ScrollWheel");
+            carryingDistance = Mathf.Clamp(newCarryingDist, 1, Distance);
         }
     }
 }
