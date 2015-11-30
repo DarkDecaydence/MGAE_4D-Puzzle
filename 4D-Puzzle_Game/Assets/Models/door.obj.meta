@@ -1,17 +1,17 @@
 fileFormatVersion: 2
-guid: 209b00bfd50926c4cb721c27e4c0dd3c
-timeCreated: 1447602944
+guid: 5f01bceec0a17e54e84f37c064408b44
+timeCreated: 1448558545
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: Desk
-    100002: //RootNode
-    400000: Desk
-    400002: //RootNode
-    2300000: Desk
-    3300000: Desk
-    4300000: Desk
+    100000: //RootNode
+    100002: DOORS_Static_Court_Wooden_192x384
+    400000: //RootNode
+    400002: DOORS_Static_Court_Wooden_192x384
+    2300000: DOORS_Static_Court_Wooden_192x384
+    3300000: DOORS_Static_Court_Wooden_192x384
+    4300000: DOORS_Static_Court_Wooden_192x384
   materials:
     importMaterials: 1
     materialName: 0
