@@ -26,6 +26,7 @@ namespace Assets.Scripts_v02.Interactives {
                 isAnimating = true;
                 hasOddAnimationCount = !hasOddAnimationCount;
                 var actualValue = hasOddAnimationCount ? -target : target;
+
                 while (time > 0) {
                     switch (aType) {
                         case AnimationType.Rotate:
@@ -35,7 +36,7 @@ namespace Assets.Scripts_v02.Interactives {
                             }
                         case AnimationType.Scale:
                             {
-                                transform.localScale += AnimationVector * actualValue * Time.deltaTime;
+                                transform.localScale = AnimationVector * (actualValue / (1 / time));
                                 break;
                             }
                         case AnimationType.Translate:
@@ -47,6 +48,7 @@ namespace Assets.Scripts_v02.Interactives {
                     time -= Time.deltaTime;
                     yield return null;
                 }
+
                 time = AnimationTime;
                 isAnimating = false;
             }

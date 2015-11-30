@@ -39,5 +39,13 @@ namespace Assets.Scripts_v02.Pickupables {
             gO_rigidbody.useGravity = true;
             gO_rigidbody.drag = 1;
         }
+
+        public void Lock(Transform lockTransform) {
+            transform.position = lockTransform.position;
+            transform.rotation = lockTransform.rotation;
+            transform.GetComponent<Rigidbody>().useGravity = false;
+            transform.GetComponent<Rigidbody>().velocity = new Vector3();
+            IsLocked = true;
+        }
     }
 }

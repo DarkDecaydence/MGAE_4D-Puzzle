@@ -19,5 +19,7 @@ namespace Assets.Scripts_v02.Pickupables {
         }
 
         public void Drop() { }
+
+        public void Lock(Transform lockTransform) { }
     }
 }

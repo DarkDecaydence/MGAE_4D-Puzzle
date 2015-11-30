@@ -46,5 +46,11 @@ namespace Assets.Scripts_v02.Pickupables {
                 return null;
             }
         }
+
+        public void Lock(Transform lockTransform) {
+            transform.rotation = lockTransform.rotation;
+            transform.position = lockTransform.position;
+            IsLocked = true;
+        }
     }
 }

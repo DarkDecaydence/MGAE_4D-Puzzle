@@ -6,5 +6,6 @@ namespace Assets.Scripts_v02.Pickupables {
         GameObject PickUp();
         string Carry(Vector3 velocity);
         void Drop();
+        void Lock(Transform lockTransform);
     }
 }
