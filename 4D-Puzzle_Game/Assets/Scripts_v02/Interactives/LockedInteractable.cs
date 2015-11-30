@@ -3,28 +3,31 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace Assets.Scripts_v02.Interactives {
-    public class LockedInteractable : ILockable, IUsable {
-
-        public List<string> PossibleKeys = new List<string>();
-        public List<IUsable> Targets = new List<IUsable>();
+    public class LockedInteractable : Interactable, ILockable {
+        
         public bool IsLocked;
-        public int RequiredActivates;
+        public List<string> RequiredKeys;
 
-        private int currentActivates;
+        private Dictionary<string, bool> RequiredActivates;
 
-        public bool Interact(string parameter) {
-            TryUnlock(parameter);
+        void Start() {  
+        }
+
+        public override bool Interact(string parameter) {
+            if (IsLocked) TryUnlock(parameter);
+
             if (!IsLocked) {
-                foreach (IUsable u in Targets)
-                    u.Interact(parameter);
-                return true;
+                return base.Interact(parameter);
             } else return false;
         }
 
         public void TryUnlock(string parameter) {
+            bool isUnlocked = false;
+            if (RequiredActivates.TryGetValue(parameter, out isUnlocked)) {
+                isUnlocked = true;
+            }
             if (PossibleKeys.Any(s => s.Equals(parameter))) {
-                currentActivates++;
-                if (currentActivates >= RequiredActivates)
+                if (RequiredActivates.All(kvp => kvp.Value))
                     IsLocked = !IsLocked;
             }
         }
