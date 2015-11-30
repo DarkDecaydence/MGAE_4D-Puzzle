@@ -3,21 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace Assets.Scripts_v02.Interactives {
-    public class LockedInteractable : ILockable, IUsable {
-
-        public List<string> PossibleKeys = new List<string>();
-        public List<IUsable> Targets = new List<IUsable>();
+    public class LockedInteractable : Interactable, ILockable {
+        
         public bool IsLocked;
         public int RequiredActivates;
 
         private int currentActivates;
 
-        public bool Interact(string parameter) {
-            TryUnlock(parameter);
+        public override bool Interact(string parameter) {
+            if (IsLocked) TryUnlock(parameter);
+
             if (!IsLocked) {
-                foreach (IUsable u in Targets)
-                    u.Interact(parameter);
-                return true;
+                return base.Interact(parameter);
             } else return false;
         }
 
