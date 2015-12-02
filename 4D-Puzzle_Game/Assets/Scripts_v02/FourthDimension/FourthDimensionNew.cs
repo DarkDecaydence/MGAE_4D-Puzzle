@@ -30,7 +30,7 @@ namespace Assets.Scripts_v02.FourthDimension {
             get {
                 switch (diffW) {
                     case 0: return new Color(1, 1, 1, 1);
-                    case 1: return new Color(1, 1, 1, 0.33f);
+                    case 1: return new Color(1, 1, 1, 0.0f);
                     default: return new Color(1, 1, 1, 0.0f);
                 }
             }
@@ -81,7 +81,7 @@ namespace Assets.Scripts_v02.FourthDimension {
                 var isDefaultRender = Mathf.Approximately(defaultRenderMode, currentRenderMode);
                 if (diffW > 0 && isDefaultRender) {
                     currentRenderMode = 2f; // Render mode #2 is Fade.
-                    setMaterialRenderMode(gObjRenderer.material);
+                    FourDManager.Instance.SetMaterialRenderMode(gObjRenderer.material, 2f);
                 }
 
                 var originColor = originColorQueue[0];
@@ -100,7 +100,7 @@ namespace Assets.Scripts_v02.FourthDimension {
                 if (Mathf.Approximately(t_tween, 1f)) {
                     if (diffW == 0 && !isDefaultRender) {
                         currentRenderMode = defaultRenderMode;
-                        setMaterialRenderMode(gObjRenderer.material);
+                        FourDManager.Instance.SetMaterialRenderMode(gObjRenderer.material, defaultRenderMode);
                     }
 
                     originColorQueue.RemoveAt(0);
@@ -110,30 +110,7 @@ namespace Assets.Scripts_v02.FourthDimension {
             }
         }
 
-        public bool CanGoWUp() { return W < PickupObjectNew.MaxObjectW; } 
-        public bool CanGoWDown() { return W > PickupObjectNew.MinObjectW; }
-
-        private void setMaterialRenderMode(Material m) {
-            m.SetFloat("_Mode", currentRenderMode);
-            
-            if (currentRenderMode == 2 || currentRenderMode == 0) {
-                m.DisableKeyword("_ALPHATEST_ON");
-                m.DisableKeyword("_ALPHAPREMULTIPLY_ON");
-            }
-
-            if (currentRenderMode == 0) {
-                m.SetInt("_ZWrite", 1);
-                m.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.One);
-                m.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.Zero);
-                m.DisableKeyword("_ALPHABLEND_ON");
-                m.renderQueue = m.shader.renderQueue;
-            } else if (currentRenderMode == 2) {
-                m.SetInt("_ZWrite", 0);
-                m.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
-                m.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
-                m.EnableKeyword("_ALPHABLEND_ON");
-                m.renderQueue = 3000;
-            }
-        }
+        public bool CanGoWUp() { return W < FourDManager.Instance.MaxObjectW; } 
+        public bool CanGoWDown() { return W > FourDManager.Instance.MinObjectW; }
     }
 }
