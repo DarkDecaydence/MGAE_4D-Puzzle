@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 using System;
 using Assets.Scripts_v02.FourthDimension.RenderCorrecters;
@@ -26,13 +27,7 @@ namespace Assets.Scripts_v02.FourthDimension {
         }
 
         private Color actualColor {
-            get {
-                switch (diffW) {
-                    case 0: return new Color(1, 1, 1, 1);
-                    case 1: return new Color(1, 1, 1, 0.15f);
-                    default: return new Color(1, 1, 1, 0.15f);
-                }
-            }
+            get { return FourDManager.Instance.GetDiffColor(diffW); }
         }
         #endregion
 
@@ -94,10 +89,7 @@ namespace Assets.Scripts_v02.FourthDimension {
         }
 
         private void ChangeColor() {
-            var currentColor =
-                diffWOld == 0 ? new Color(1, 1, 1, 1) :
-                diffWOld == 1 ? new Color(1, 1, 1, 0.09f) :
-                                new Color(1, 1, 1, 0f);
+            var currentColor = FourDManager.Instance.GetDiffColor(diffWOld);
 
             originColorQueue.Add(currentColor);
             targetColorQueue.Add(actualColor);
@@ -145,7 +137,7 @@ namespace Assets.Scripts_v02.FourthDimension {
 
                         var isDefaultRender = Mathf.Approximately(m.GetFloat("_Mode"), defaultRenderMode);
                         if (diffW > 0 && isDefaultRender)
-                            setMaterialRenderMode(m, 2f);
+                            FourDManager.Instance.SetMaterialRenderMode(m, 2f);
 
                         Color tweenedColor = m.color;
                         tweenedColor.a = tweenedAlpha;
@@ -153,7 +145,7 @@ namespace Assets.Scripts_v02.FourthDimension {
                         m.color = tweenedColor;
 
                         if (diffW == 0 && !isDefaultRender && Mathf.Approximately(t_tween, 1f)) {
-                            setMaterialRenderMode(m, defaultRenderMode);
+                            FourDManager.Instance.SetMaterialRenderMode(m, defaultRenderMode);
                         }
                     }
                 }
@@ -176,7 +168,7 @@ namespace Assets.Scripts_v02.FourthDimension {
                 }
             }
 
-            if (W >= PickupObjectNew.MaxObjectW) { return false; }
+            if (W >= FourDManager.Instance.MaxObjectW) { return false; }
             
             return true;
         }
@@ -190,53 +182,9 @@ namespace Assets.Scripts_v02.FourthDimension {
                     return false;
             }
 
-            if (W <= PickupObjectNew.MinObjectW) { return false; }
+            if (W <= FourDManager.Instance.MinObjectW) { return false; }
 
             return true;
-        }
-
-        private void setMaterialRenderMode(Material m, float newMode) {
-            m.SetFloat("_Mode", newMode);
-            var integerRenderMode = Mathf.RoundToInt(newMode);
-
-            switch (integerRenderMode) {
-                case 0: 
-                    m.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.One);
-                    m.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.Zero);
-                    m.SetInt("_ZWrite", 1);
-                    m.DisableKeyword("_ALPHATEST_ON");
-                    m.DisableKeyword("_ALPHABLEND_ON");
-                    m.DisableKeyword("_ALPHAPREMULTIPLY_ON");
-                    m.renderQueue = -1;
-                    break;
-                case 1:
-                    m.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.One);
-                    m.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.Zero);
-                    m.SetInt("_ZWrite", 1);
-                    m.EnableKeyword("_ALPHATEST_ON");
-                    m.DisableKeyword("_ALPHABLEND_ON");
-                    m.DisableKeyword("_ALPHAPREMULTIPLY_ON");
-                    m.renderQueue = 2450;
-                    break;
-                case 2:
-                    m.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
-                    m.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
-                    m.SetInt("_ZWrite", 0);
-                    m.DisableKeyword("_ALPHATEST_ON");
-                    m.EnableKeyword("_ALPHABLEND_ON");
-                    m.DisableKeyword("_ALPHAPREMULTIPLY_ON");
-                    m.renderQueue = 3000;
-                    break;
-                case 3:
-                    m.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.One);
-                    m.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
-                    m.SetInt("_ZWrite", 0);
-                    m.DisableKeyword("_ALPHATEST_ON");
-                    m.DisableKeyword("_ALPHABLEND_ON");
-                    m.EnableKeyword("_ALPHAPREMULTIPLY_ON");
-                    m.renderQueue = 3000;
-                    break;
-            }
         }
     }
 }
