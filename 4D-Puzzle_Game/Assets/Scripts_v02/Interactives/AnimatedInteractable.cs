@@ -24,7 +24,6 @@ namespace Assets.Scripts_v02.Interactives {
         IEnumerator Animate(float time, float target, AnimationType aType) {
             if (!isAnimating) {
                 isAnimating = true;
-                hasOddAnimationCount = !hasOddAnimationCount;
                 var actualValue = hasOddAnimationCount ? -target : target;
 
                 while (time > 0) {
@@ -49,6 +48,7 @@ namespace Assets.Scripts_v02.Interactives {
                     yield return null;
                 }
 
+                hasOddAnimationCount = !hasOddAnimationCount;
                 time = AnimationTime;
                 isAnimating = false;
             }
