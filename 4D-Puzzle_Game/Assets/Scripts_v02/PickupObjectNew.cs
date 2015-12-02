@@ -12,7 +12,7 @@ namespace Assets.Scripts_v02 {
         public static int PlayerW;
         public static int MaxObjectW = 4;
         public static int MinObjectW = 0;
-		public static int MaxPlayerW = 1;
+		public static int MaxPlayerW = 2;
 
         // Public fields
         public List<string> Inventory = new List<string>(1);
