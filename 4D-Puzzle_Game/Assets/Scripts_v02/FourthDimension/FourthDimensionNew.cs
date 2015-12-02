@@ -30,8 +30,8 @@ namespace Assets.Scripts_v02.FourthDimension {
             get {
                 switch (diffW) {
                     case 0: return new Color(1, 1, 1, 1);
-                    case 1: return new Color(1, 1, 1, 0.33f);
-                    default: return new Color(1, 1, 1, 0.0f);
+                    case 1: return new Color(1, 1, 1, 0.15f);
+                    default: return new Color(1, 1, 1, 0.15f);
                 }
             }
         }

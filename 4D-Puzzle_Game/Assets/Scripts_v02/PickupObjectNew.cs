@@ -10,17 +10,19 @@ namespace Assets.Scripts_v02 {
 
         #region Fields & Properties
         public static int PlayerW;
-        public static int MaxObjectW = 4;
+        public static int MaxObjectW = 2;
         public static int MinObjectW = 0;
-		public static int MaxPlayerW = 1;
+		public static int MaxPlayerW = 2;
 
         // Public fields
         public List<string> Inventory = new List<string>(1);
         public float Distance;
+        public GameObject IGMenu;
 
         // Private fields
         private GameObject mainCamera;
         private GameObject carriedObject;
+        private GameObject visibleMenu;
         private float carryingDistance;
 
         private float defaultCarryingDistance {
@@ -42,6 +44,12 @@ namespace Assets.Scripts_v02 {
 
         protected override void Update() {
             base.Update();
+
+            CheckPause();
+            if (visibleMenu != null) {
+                CheckMouseClick();
+            }
+
             if (IsCarrying) {
                 CheckDrop();
                 Carry();
@@ -68,6 +76,37 @@ namespace Assets.Scripts_v02 {
                     var cObj_FD = carriedObject.GetComponent<IFourthDimension>();
                     if (cObj_FD.CanGoWDown()) cObj_FD.PushW(-1);
                     else Drop();
+                }
+            }
+        }
+
+        private void CheckPause() {
+            if (Input.GetKeyDown(KeyCode.Escape)) {
+                if (visibleMenu == null) {
+                    visibleMenu = GameObject.Instantiate(IGMenu);
+                    Time.timeScale = 0;
+                    Cursor.lockState = CursorLockMode.Confined;
+                    Cursor.visible = true;
+                } else {
+                    GameObject.Destroy(visibleMenu);
+                    Time.timeScale = 1;
+                    Cursor.lockState = CursorLockMode.Locked;
+                    Cursor.visible = false;
+                }
+            }
+        }
+
+        private void CheckMouseClick() {
+            if (visibleMenu != null && Input.GetMouseButtonDown(0)) {
+                RaycastHit2D[] selectionHits = Physics2D.RaycastAll(Input.mousePosition, new Vector2());
+                if (selectionHits.Length > 0) {
+                    foreach (RaycastHit2D rh in selectionHits) {
+                        var goto_Script = rh.collider.GetComponent<GoToLevel>();
+                        if (goto_Script != null) {
+                            Debug.Log("SJFJGAHJABNUJ");
+                            Application.LoadLevel(goto_Script.LevelName);
+                        }
+                    }
                 }
             }
         }
