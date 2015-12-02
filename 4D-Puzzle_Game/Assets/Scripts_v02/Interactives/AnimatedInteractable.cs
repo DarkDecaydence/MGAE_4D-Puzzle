@@ -24,14 +24,13 @@ namespace Assets.Scripts_v02.Interactives {
         IEnumerator Animate(float time, float target, AnimationType aType) {
             if (!isAnimating) {
                 isAnimating = true;
-                hasOddAnimationCount = !hasOddAnimationCount;
                 var actualValue = hasOddAnimationCount ? -target : target;
 
                 while (time > 0) {
                     switch (aType) {
                         case AnimationType.Rotate:
                             {
-                                transform.Rotate(AnimationVector * actualValue * Time.deltaTime);
+                                transform.Rotate(AnimationVector * (Time.deltaTime / actualValue));
                                 break;
                             }
                         case AnimationType.Scale:
@@ -49,6 +48,7 @@ namespace Assets.Scripts_v02.Interactives {
                     yield return null;
                 }
 
+                hasOddAnimationCount = !hasOddAnimationCount;
                 time = AnimationTime;
                 isAnimating = false;
             }

@@ -110,12 +110,14 @@ namespace Assets.Scripts_v02 {
 
         private void Carry() {
             if (IsCarrying) {
+                var pickupable = carriedObject.GetComponent<IPickupable>();
+
+                if(pickupable.PickUp() == null) { Drop(); return; }
                 CheckDistance();
                 
                 Vector3 diff = mainCamera.transform.position + mainCamera.transform.forward * carryingDistance - carriedObject.transform.position;
                 Vector3 gO_velocity = diff * 10;
 
-                var pickupable = carriedObject.GetComponent<IPickupable>();
                 var itemName = pickupable.Carry(gO_velocity);
                 if (!Inventory.Contains(itemName)) {
                     Inventory.Add(itemName);
