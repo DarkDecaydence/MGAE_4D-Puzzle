@@ -30,7 +30,7 @@ namespace Assets.Scripts_v02.Interactives {
                     switch (aType) {
                         case AnimationType.Rotate:
                             {
-                                transform.Rotate(AnimationVector * actualValue * Time.deltaTime);
+                                transform.Rotate(AnimationVector * (Time.deltaTime / actualValue));
                                 break;
                             }
                         case AnimationType.Scale:
