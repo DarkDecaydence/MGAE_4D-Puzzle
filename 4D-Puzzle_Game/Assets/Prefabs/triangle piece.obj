@@ -1,0 +1,186 @@
+# FILE triangle piece.obj
+mtllib /Users/Leon/Copenhagen Docs/Semester 1/Game Design/4D/MGAE_4D-Puzzle/4D-Puzzle_Game/Assets/Prefabs/triangle piece.mtl
+trace_obj triangle piece.obj
+shadow_obj triangle piece.obj
+
+g STRUCTURAL_-_BEARING STUCCO_-_WHITE_FINE
+
+usemtl STUCCO_-_WHITE_FINE
+
+v 521639 -20000 -1.43679e+06
+v 1.07236e+06 -20000 -886069
+v 1.07236e+06 -21000 -886069
+v 521639 -21000 -1.43679e+06
+v 167724 -21000 -1.08287e+06
+v 521639 -21000 -1.43679e+06
+v 1.07236e+06 -21000 -886069
+v 167724 -20000 -1.08287e+06
+v 521639 -20000 -1.43679e+06
+v 521639 -21000 -1.43679e+06
+v 167724 -21000 -1.08287e+06
+v 1.07236e+06 -20000 -886069
+v 167724 -20000 -1.08287e+06
+v 167724 -21000 -1.08287e+06
+v 1.07236e+06 -21000 -886069
+# vertex indices from 1 to 15
+
+s off
+vt 1.02142 -0.1
+vt 4.29745 -0.1
+vt 4.29745 -0.105
+vt 1.02142 -0.105
+# texture vertex indices from 1 to 4
+
+f  1/1 2/2 3/3 4/4
+vt -0.331531 5.46889
+vt 1.02142 7.5742
+vt 4.29745 5.46889
+# texture vertex indices from 5 to 7
+
+f  5/5 4/6 3/7
+vt 5.46889 -0.1
+vt 7.5742 -0.1
+vt 7.5742 -0.105
+vt 5.46889 -0.105
+# texture vertex indices from 8 to 11
+
+f  8/8 1/9 4/10 5/11
+vt 4.29745 -0.1
+vt -0.331531 -0.1
+vt -0.331531 -0.105
+vt 4.29745 -0.105
+# texture vertex indices from 12 to 15
+
+f  2/12 8/13 5/14 3/15
+
+g STRUCTURAL_-_BEARING CONCRETE_-_04
+
+usemtl CONCRETE_-_04
+
+v 521639 0 -1.43679e+06
+v 167724 0 -1.08287e+06
+v 167724 2000 -1.08287e+06
+v 521639 2000 -1.43679e+06
+v 1.07236e+06 0 -886069
+v 521639 0 -1.43679e+06
+v 521639 2000 -1.43679e+06
+v 1.07236e+06 2000 -886069
+v 167724 0 -1.08287e+06
+v 1.07236e+06 0 -886069
+v 1.07236e+06 2000 -886069
+v 167724 2000 -1.08287e+06
+# vertex indices from 16 to 27
+
+s off
+vt 15.1484 0
+vt 10.9378 0
+vt 10.9378 0.02
+vt 15.1484 0.02
+# texture vertex indices from 16 to 19
+
+f  16/16 17/17 18/18 19/19
+vt 8.5949 0
+vt 2.04285 0
+vt 2.04285 0.02
+vt 8.5949 0.02
+# texture vertex indices from 20 to 23
+
+f  20/20 16/21 19/22 23/23
+vt -0.663061 0
+vt 8.5949 0
+vt 8.5949 0.02
+vt -0.663061 0.02
+# texture vertex indices from 24 to 27
+
+f  17/24 20/25 23/26 18/27
+
+g STRUCTURAL_-_BEARING CONCRETE_-_02
+
+usemtl CONCRETE_-_02
+
+v 521639 -20000 -1.43679e+06
+v 167724 -20000 -1.08287e+06
+v 167724 0 -1.08287e+06
+v 521639 0 -1.43679e+06
+v 1.07236e+06 -20000 -886069
+v 521639 -20000 -1.43679e+06
+v 521639 0 -1.43679e+06
+v 1.07236e+06 0 -886069
+v 167724 -20000 -1.08287e+06
+v 1.07236e+06 -20000 -886069
+v 1.07236e+06 0 -886069
+v 167724 0 -1.08287e+06
+# vertex indices from 28 to 39
+
+s off
+vt 37.871 -0.5
+vt 27.3445 -0.5
+vt 27.3445 0
+vt 37.871 0
+# texture vertex indices from 28 to 31
+
+f  28/28 29/29 30/30 31/31
+vt 21.4872 -0.5
+vt 5.10712 -0.5
+vt 5.10712 0
+vt 21.4872 0
+# texture vertex indices from 32 to 35
+
+f  32/32 28/33 31/34 35/35
+vt -1.65765 -0.5
+vt 21.4872 -0.5
+vt 21.4872 0
+vt -1.65765 0
+# texture vertex indices from 36 to 39
+
+f  29/36 32/37 35/38 30/39
+
+g STRUCTURAL_-_BEARING WOOD_-_OAK_LIGHT
+
+usemtl WOOD_-_OAK_LIGHT
+
+v 521639 2000 -1.43679e+06
+v 167724 2000 -1.08287e+06
+v 167724 4000 -1.08287e+06
+v 521639 4000 -1.43679e+06
+v 1.07236e+06 4000 -886069
+v 521639 4000 -1.43679e+06
+v 167724 4000 -1.08287e+06
+v 1.07236e+06 2000 -886069
+v 521639 2000 -1.43679e+06
+v 521639 4000 -1.43679e+06
+v 1.07236e+06 4000 -886069
+v 167724 2000 -1.08287e+06
+v 1.07236e+06 2000 -886069
+v 1.07236e+06 4000 -886069
+v 167724 4000 -1.08287e+06
+# vertex indices from 40 to 54
+
+s off
+vt 15.1484 0.02
+vt 10.9378 0.02
+vt 10.9378 0.04
+vt 15.1484 0.04
+# texture vertex indices from 40 to 43
+
+f  40/40 41/41 42/42 43/43
+vt 8.5949 10.9378
+vt 2.04285 15.1484
+vt -0.663061 10.9378
+# texture vertex indices from 44 to 46
+
+f  44/44 43/45 42/46
+vt 8.5949 0.02
+vt 2.04285 0.02
+vt 2.04285 0.04
+vt 8.5949 0.04
+# texture vertex indices from 47 to 50
+
+f  47/47 40/48 43/49 44/50
+vt -0.663061 0.02
+vt 8.5949 0.02
+vt 8.5949 0.04
+vt -0.663061 0.04
+# texture vertex indices from 51 to 54
+
+f  41/51 47/52 44/53 42/54
