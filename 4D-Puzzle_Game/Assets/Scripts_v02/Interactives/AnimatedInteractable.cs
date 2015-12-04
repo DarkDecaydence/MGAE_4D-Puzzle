@@ -17,20 +17,24 @@ namespace Assets.Scripts_v02.Interactives {
         private bool hasOddAnimationCount;
 
         public override bool Interact(string parameter) {
+            Debug.Log("rotate");
             StartCoroutine(Animate(AnimationTime, AnimationValue, Animation));
             return true;
         }
 
         IEnumerator Animate(float time, float target, AnimationType aType) {
-            if (!isAnimating) {
+            if (!isAnimating)
+            {
                 isAnimating = true;
                 var actualValue = hasOddAnimationCount ? -target : target;
-
-                while (time > 0) {
-                    switch (aType) {
+                while (time > 0)
+                {
+                    switch (aType)
+                    {
                         case AnimationType.Rotate:
                             {
-                                transform.Rotate(AnimationVector * (Time.deltaTime / actualValue));
+                                
+                                transform.Rotate(AnimationVector * (Time.deltaTime * actualValue));
                                 break;
                             }
                         case AnimationType.Scale:
@@ -51,6 +55,7 @@ namespace Assets.Scripts_v02.Interactives {
                 hasOddAnimationCount = !hasOddAnimationCount;
                 time = AnimationTime;
                 isAnimating = false;
+                
             }
         }
     }

@@ -9,7 +9,15 @@ namespace Assets.Scripts_v02.Interactives {
 
         public virtual bool Interact(string parameter) {
             if (PossibleKeys.Any(s => s.Equals(parameter))) {
-                return Targets.Any(gObj => gObj.GetComponent<IUsable>().Interact(parameter));
+                bool result = false;
+                foreach (GameObject target in Targets) {
+                    bool r = target.GetComponent<IUsable>().Interact(parameter);
+                    if (r)
+                    {
+                        result = r;
+                    } 
+                }
+                return result;
             } else
                 return false;
             }
