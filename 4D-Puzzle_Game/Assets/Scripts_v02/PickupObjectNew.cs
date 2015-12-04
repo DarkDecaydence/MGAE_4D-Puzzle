@@ -112,11 +112,12 @@ namespace Assets.Scripts_v02 {
             if (IsCarrying) {
                 var pickupable = carriedObject.GetComponent<IPickupable>();
 
-                if(pickupable.PickUp() == null) { Drop(); return; }
                 CheckDistance();
-                
+
+                if (pickupable.PickUp() == null) { Drop(); return; }
                 Vector3 diff = mainCamera.transform.position + mainCamera.transform.forward * carryingDistance - carriedObject.transform.position;
-                Vector3 gO_velocity = diff * 20;
+                if (diff.sqrMagnitude > Mathf.Pow(defaultCarryingDistance * 1.2f, 2)) { Drop(); return; }
+                Vector3 gO_velocity = diff * 15;
 
                 var itemName = pickupable.Carry(gO_velocity);
                 if (!Inventory.Contains(itemName)) {
