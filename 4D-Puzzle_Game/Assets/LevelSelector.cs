@@ -16,7 +16,11 @@ public class LevelSelector : MonoBehaviour {
                 foreach (RaycastHit2D rh in selectionHits) {
                     var goto_Script = rh.collider.GetComponent<GoToLevel>();
                     if (goto_Script != null) {
+                        switch (goto_Script.LevelName) {
+                            case "Exit": Application.Quit(); break;
+                        }
                         if (goto_Script.LevelName == "Exit") { Application.Quit(); }
+                       
                         else {
                             Application.LoadLevel(goto_Script.LevelName);
                         }
