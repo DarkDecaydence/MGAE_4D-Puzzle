@@ -32,11 +32,13 @@ namespace Assets.Scripts_v02 {
         #endregion
 
         protected override void Start() {
+            W = 0;
             base.Start();
             carryingDistance = defaultCarryingDistance;
             mainCamera = GameObject.FindWithTag("MainCamera");
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+            PauseGame(visibleMenu != null);
         }
 
         protected override void Update() {
@@ -79,17 +81,21 @@ namespace Assets.Scripts_v02 {
 
         private void CheckPause() {
             if (Input.GetKeyDown(KeyCode.Escape)) {
-                if (visibleMenu == null) {
-                    visibleMenu = GameObject.Instantiate(IGMenu);
-                    Time.timeScale = 0;
-                    Cursor.lockState = CursorLockMode.Confined;
-                    Cursor.visible = true;
-                } else {
-                    GameObject.Destroy(visibleMenu);
-                    Time.timeScale = 1;
-                    Cursor.lockState = CursorLockMode.Locked;
-                    Cursor.visible = false;
-                }
+                PauseGame(visibleMenu == null);
+            }
+        }
+
+        private void PauseGame(bool doPause) {
+            if (doPause) {
+                visibleMenu = GameObject.Instantiate(IGMenu);
+                Time.timeScale = 0;
+                Cursor.lockState = CursorLockMode.Confined;
+                Cursor.visible = true;
+            } else {
+                GameObject.Destroy(visibleMenu);
+                Time.timeScale = 1;
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
             }
         }
 
