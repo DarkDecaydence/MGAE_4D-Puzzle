@@ -1,0 +1,48 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[english]{babel}
+\usepackage[vmargin=3.5cm, top=2cm]{geometry}
+\usepackage[linktocpage=true]{hyperref}
+\usepackage{enumitem}
+\usepackage{longtable}
+\usepackage{pdfpages}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage[section]{placeins}
+\hypersetup{
+   colorlinks,
+   citecolor=black,
+   filecolor=black,
+   linkcolor=black,
+   urlcolor=black
+}
+
+\begin{document}
+
+\begin{titlepage}
+
+\centering \parindent=0pt
+\newcommand{\HRule}{\rule{\textwidth}{1mm}}
+\vspace*{\stretch{1}} \HRule\\[1cm]\Huge\bfseries
+Game Engines Report\\[0.7cm]
+\HRule\\[4cm]  
+\large by 
+\\Alexander Kirk
+\\ and Emil Buhl
+\vspace*{\stretch{2}} \normalsize %
+\begin{flushleft}
+IT University of Copenhagen \\
+MGAE, F2015\\
+Dan Lessin\\
+\today \end{flushleft}
+\end{titlepage}
+
+\tableofcontents
+\pagebreak
+
+\include{Introduction}
+\include{ProjDescription}
+\include{DiscAndConc}
+
+\end{document}
