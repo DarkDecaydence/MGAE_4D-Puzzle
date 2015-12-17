@@ -12,4 +12,10 @@ This movement could include correct mathematical rotation around all geometric p
 While a technically interesting challenge, the design itself would be a struggle of understanding and applying mathematical concepts to properly fit a game play in which it would be highly unnecessary. The approach we used lends itself especially well to game play due to its relative ease of understanding and appliance, two qualities which the fluid solution does not possess.
 
 \subsubsection{Transparency of 4D objects}
-Settling upon 
+We decided to use transparency as a means to visualize the fourth dimension. We did consider colour, and used some elements of that consideration in our final design.\\
+
+The transparency is handled by employing functions within the standard shader Unity uses, in which options are changed when the player moves along the fourth dimension. This enables objects to become opaque and fully transparent, depending on relative distance to the player character (still on the fourth dimension).\\
+
+Our implementation does need some optimization. Currently, the materials have their colour changed such that the transparency applies, but this does not exclude even fully transparent objects from being drawn during the rendering passes. Unity also needs every object to be non-static in order to change the rendering options correctly, which tolls the graphics with a large amount of unnecessary obfuscated polygons.\\
+
+Due to the way Unity handles rendering passes, the problems could be mended by changing the properties of materials that appear in one space. Additionally, a custom shader or likewise implementation could be used to skip the rendering passes of the completely invisible meshes, drastically reducing the amount of rendered polygons within a scene.\\

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.11)  17 DEC 2015 20:57
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.11)  17 DEC 2015 22:10
 entering extended mode
 **Main.tex
 (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Main.tex
@@ -531,7 +531,6 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 19.
 (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Introduction.aux)
 (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\ProjDescription.aux)
 (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\WeekStructure.aux)
-(D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\DiscAndConc.aux)
 (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Appendix.aux))
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
 LaTeX Font Info:    ... okay on input line 21.
@@ -643,17 +642,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--10
 ) [2
 
 ] (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\ProjDescription.tex
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 9.
+Underfull \hbox (badness 10000) in paragraph at lines 2--3
 
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 11.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 9.
-) [3
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 11.
+ [3
 
 
-]
+]) [4]
 (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\WeekStructure.tex
 Underfull \hbox (badness 10000) in paragraph at lines 33--34
 
@@ -679,7 +681,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 44--45
 
  []
 
-[4
+[5
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has
@@ -728,7 +730,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 66--67
 
  []
 
-[5]
+[6]
 Underfull \hbox (badness 10000) in paragraph at lines 71--72
 
  []
@@ -758,20 +760,44 @@ Underfull \hbox (badness 10000) in paragraph at lines 82--83
 
  []
 
-) [6] (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Appendix.tex) [7
+) [7] (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Discussion.tex
+Underfull \hbox (badness 10000) in paragraph at lines 6--7
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8--9
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--11
+
+ []
+
+) [8
+
+
+] (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Conclusion.tex)
+[9
+
+
+] (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Appendix.tex) [10
 
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 49.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 49.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 51.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 51.
 
 (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Main.aux
 (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Introduction.aux)
 (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\ProjDescription.aux)
 (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\WeekStructure.aux)
+(D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Discussion.aux)
+(D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Conclusion.aux)
 (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Appendix.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 49.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 49.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 51.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 51.
 
 
 Package rerunfilecheck Warning: File `Main.out' has changed.
@@ -779,31 +805,28 @@ Package rerunfilecheck Warning: File `Main.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `Main.out':
-(rerunfilecheck)             Before: B90CACF27119F901FEC390D294CB8F66;1146
-(rerunfilecheck)             After:  F867CBF817636C13969C6688293FB03C;1084.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 49.
+(rerunfilecheck)             Before: 9B563A92E08718B3F3C92D20EAD9C8A2;1019
+(rerunfilecheck)             After:  6BE0CAE235C4F2F33B4F8E80788929E5;1363.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 51.
  ) 
 Here is how much of TeX's memory you used:
- 7549 strings out of 493921
- 111535 string characters out of 3144864
- 213233 words of memory out of 3000000
- 10691 multiletter control sequences out of 15000+200000
+ 7559 strings out of 493921
+ 111951 string characters out of 3144864
+ 212859 words of memory out of 3000000
+ 10688 multiletter control sequences out of 15000+200000
  9017 words of font info for 32 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 37i,9n,39p,618b,415s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{section.5} has been referenced but does not exist
-, replaced by a fixed one
-
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C
-:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/
-Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Pro
-gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program
- Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program F
-iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Fil
-es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Main.pdf (8 pages, 130194 bytes).
+ 37i,9n,39p,921b,438s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/P
+rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Progr
+am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program
+ Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program F
+iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on Main.pdf (11 pages, 136830 bytes).
 PDF statistics:
- 173 PDF objects out of 1000 (max. 8388607)
- 31 named destinations out of 1000 (max. 500000)
- 145 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 184 PDF objects out of 1000 (max. 8388607)
+ 37 named destinations out of 1000 (max. 500000)
+ 129 words of extra memory for PDF output out of 10000 (max. 10000000)
 
