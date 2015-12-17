@@ -12,5 +12,6 @@
 \contentsline {subsubsection}{\numberline {3.2.3}Week three}{5}{subsubsection.3.2.3}
 \contentsline {subsubsection}{\numberline {3.2.4}Week four}{5}{subsubsection.3.2.4}
 \contentsline {subsubsection}{\numberline {3.2.5}Week five}{6}{subsubsection.3.2.5}
+\contentsline {subsubsection}{\numberline {3.2.6}Week six}{6}{subsubsection.3.2.6}
 \contentsline {section}{\numberline {4}Discussion and Conclusion}{7}{section.4}
 \contentsline {section}{\numberline {5}Bibliography}{8}{section.5}
