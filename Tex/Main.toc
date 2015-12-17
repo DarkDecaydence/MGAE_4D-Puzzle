@@ -14,13 +14,9 @@
 \contentsline {subsubsection}{\numberline {3.2.4}Week four}{6}{subsubsection.3.2.4}
 \contentsline {subsubsection}{\numberline {3.2.5}Week five}{7}{subsubsection.3.2.5}
 \contentsline {subsubsection}{\numberline {3.2.6}Week six}{7}{subsubsection.3.2.6}
-<<<<<<< HEAD
 \contentsline {section}{\numberline {4}Discussion}{8}{section.4}
 \contentsline {subsection}{\numberline {4.1}Alternate solutions}{8}{subsection.4.1}
 \contentsline {subsubsection}{\numberline {4.1.1}4D-transformations and -movement}{8}{subsubsection.4.1.1}
 \contentsline {subsubsection}{\numberline {4.1.2}Transparency of 4D objects}{8}{subsubsection.4.1.2}
-\contentsline {section}{\numberline {5}Conclusion}{9}{section.5}
-\contentsline {section}{\numberline {6}Bibliography}{10}{section.6}
-=======
-\contentsline {section}{\numberline {4}Bibliography}{8}{section.4}
->>>>>>> c24417893b61b76538217111ef452fa8fb49a0e6
+\contentsline {section}{\numberline {5}Conclusion}{10}{section.5}
+\contentsline {section}{\numberline {6}Bibliography}{11}{section.6}
