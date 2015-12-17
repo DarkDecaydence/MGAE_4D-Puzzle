@@ -1,4 +1,5 @@
 \BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+<<<<<<< HEAD
 \BOOKMARK [1][-]{section.2}{Project Description}{}% 2
 \BOOKMARK [1][-]{section.3}{Week Structure}{}% 3
 \BOOKMARK [2][-]{subsection.3.1}{Time Table}{section.3}% 4
@@ -10,3 +11,8 @@
 \BOOKMARK [3][-]{subsubsection.3.2.5}{Week five}{subsection.3.2}% 10
 \BOOKMARK [1][-]{section.4}{Discussion and Conclusion}{}% 11
 \BOOKMARK [1][-]{section.5}{Bibliography}{}% 12
+=======
+\BOOKMARK [2][-]{subsection.1.1}{Scope and Context}{section.1}% 2
+\BOOKMARK [1][-]{section.2}{Project Description}{}% 3
+\BOOKMARK [1][-]{section.3}{Discussion and Conclusion}{}% 4
+>>>>>>> f1e5a1d2929758df360600d9d914f1dba0be0131
