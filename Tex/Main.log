@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.11)  17 DEC 2015 23:08
-=======
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.12.17)  17 DEC 2015 23:38
->>>>>>> 97c64adae11c29c97899324e3393ad86b8f07f0c
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.11)  18 DEC 2015 00:16
 entering extended mode
 **Main.tex
 (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Main.tex
@@ -530,7 +526,6 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 Package: placeins 2005/04/18  v 2.2
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 19.
-<<<<<<< HEAD
 
 (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Main.aux
 (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Introduction.aux)
@@ -539,12 +534,6 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 19.
 (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Discussion.aux)
 (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Conclusion.aux)
 (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Appendix.aux))
-=======
- (Main.aux (Introduction.aux) (ProjDescription.aux) (WeekStructure.aux)
-(Discussion.aux) (Conclusion.aux) (Appendix.aux))
-\openout1 = `Main.aux'.
-
->>>>>>> 97c64adae11c29c97899324e3393ad86b8f07f0c
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
 LaTeX Font Info:    ... okay on input line 21.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
@@ -643,57 +632,43 @@ been already used, duplicate ignored
                    \relax 
 l.43 
       [1] (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Introduction.tex
-Underfull \hbox (badness 10000) in paragraph at lines 4--7
+Underfull \hbox (badness 10000) in paragraph at lines 5--6
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8--10
+Underfull \hbox (badness 10000) in paragraph at lines 7--8
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--10
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--12
 
  []
 
 ) [2
 
-<<<<<<< HEAD
 ] (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\ProjDescription.tex
-=======
-]
-\openout2 = `ProjDescription.aux'.
-
- (ProjDescription.tex
->>>>>>> 97c64adae11c29c97899324e3393ad86b8f07f0c
 Underfull \hbox (badness 10000) in paragraph at lines 2--3
 
  []
 
-<<<<<<< HEAD
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 13.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 12.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 13.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 12.
  [3
-=======
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 11.
-("C:\Users\Raev\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omscmr.fd"
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 11.
->>>>>>> 97c64adae11c29c97899324e3393ad86b8f07f0c
 
 
-<<<<<<< HEAD
 ]) [4]
 (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\WeekStructure.tex
-=======
-
-]) [4]
-\openout2 = `WeekStructure.aux'.
-
- (WeekStructure.tex
->>>>>>> 97c64adae11c29c97899324e3393ad86b8f07f0c
 Underfull \hbox (badness 10000) in paragraph at lines 33--34
 
  []
@@ -802,14 +777,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 84--85
 
  []
 
-<<<<<<< HEAD
-) [7] (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Discussion.tex
-=======
-) [7]
-\openout2 = `Discussion.aux'.
 
- (Discussion.tex
->>>>>>> 97c64adae11c29c97899324e3393ad86b8f07f0c
+Underfull \hbox (badness 10000) in paragraph at lines 86--87
+
+ []
+
+) [7] (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Discussion.tex
 Underfull \hbox (badness 10000) in paragraph at lines 6--7
 
  []
@@ -826,18 +799,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 10--11
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 15--16
-<<<<<<< HEAD
 
  []
 
-=======
-
- []
->>>>>>> 97c64adae11c29c97899324e3393ad86b8f07f0c
 
 Underfull \hbox (badness 10000) in paragraph at lines 17--18
 
-<<<<<<< HEAD
  []
 
 
@@ -853,43 +820,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 21--47
 [8
 
 
-] [9] (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Conclusion.tex)
-[10
-
-
-] (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Appendix.tex) [11
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 17--18
->>>>>>> 97c64adae11c29c97899324e3393ad86b8f07f0c
-
- []
-
-
-<<<<<<< HEAD
-(D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Main.aux
-(D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Introduction.aux)
-(D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\ProjDescription.aux)
-(D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\WeekStructure.aux)
-(D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Discussion.aux)
-(D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Conclusion.aux)
-(D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Appendix.aux))
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 19--20
-
- []
-
-)
-Underfull \hbox (badness 10000) in paragraph at lines 21--47
-
- []
-
-[8
-
-
-] [9]
-\openout2 = `Conclusion.aux'.
-
- (Conclusion.tex
+] [9] (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Conclusion.tex
 Underfull \hbox (badness 10000) in paragraph at lines 2--3
 
  []
@@ -897,33 +828,53 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--3
 ) [10
 
 
-]
-\openout2 = `Appendix.aux'.
+] (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Appendix.tex
+<pictures/portalChamber.jpg, id=178, 1003.75pt x 565.11125pt>
+File: pictures/portalChamber.jpg Graphic file (type jpg)
 
- (Appendix.tex) [11
+<use pictures/portalChamber.jpg>
+Package pdftex.def Info: pictures/portalChamber.jpg used on input line 25.
+(pdftex.def)             Requested size: 501.87378pt x 282.55493pt.
+
+Overfull \hbox (83.6201pt too wide) in paragraph at lines 25--26
+ [][] 
+ []
+
+) [11
 
 
-]
+pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) ha
+s been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.49 \include{Appendix}
+                        <D:/MGAE/UnityProject/4D-Puzzle/MGAE_4D-Puzzle/Tex/pict
+ures/portalChamber.jpg>]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 51.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 51.
- (Main.aux (Introduction.aux) (ProjDescription.aux)
-(WeekStructure.aux) (Discussion.aux) (Conclusion.aux) (Appendix.aux))
->>>>>>> 97c64adae11c29c97899324e3393ad86b8f07f0c
+
+(D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Main.aux
+(D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Introduction.aux)
+(D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\ProjDescription.aux)
+(D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\WeekStructure.aux)
+(D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Discussion.aux)
+(D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Conclusion.aux)
+(D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Appendix.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 51.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 51.
 Package rerunfilecheck Info: File `Main.out' has not changed.
-(rerunfilecheck)             Checksum: 6BE0CAE235C4F2F33B4F8E80788929E5;1363.
+(rerunfilecheck)             Checksum: 8BDA39B0B723C6A163A6570108493D52;1483.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 51.
  ) 
 Here is how much of TeX's memory you used:
-<<<<<<< HEAD
- 7571 strings out of 493921
- 112320 string characters out of 3144864
- 213610 words of memory out of 3000000
- 10695 multiletter control sequences out of 15000+200000
+ 7587 strings out of 493921
+ 112600 string characters out of 3144864
+ 213724 words of memory out of 3000000
+ 10704 multiletter control sequences out of 15000+200000
  9017 words of font info for 32 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 37i,9n,39p,921b,438s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 37i,9n,39p,892b,440s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/P
@@ -931,28 +882,9 @@ rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Progr
 am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program
  Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program F
 iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Main.pdf (12 pages, 140795 bytes).
-=======
- 7729 strings out of 493634
- 113988 string characters out of 3135646
- 223205 words of memory out of 3000000
- 10936 multiletter control sequences out of 15000+200000
- 9017 words of font info for 32 fonts, out of 3000000 for 9000
- 1025 hyphenation exceptions out of 8191
- 37i,9n,39p,923b,438s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/Raev/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmbx10.pfb><C:/Users/Raev/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmbx12.pfb><C:/Users/Raev/AppData/Local/Programs/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Raev/AppData/Local/Programs/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Raev/AppData/Local/Pro
-grams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Raev/AppDa
-ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/User
-s/Raev/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.
-pfb>
-Output written on Main.pdf (12 pages, 141699 bytes).
->>>>>>> 97c64adae11c29c97899324e3393ad86b8f07f0c
+Output written on Main.pdf (12 pages, 667212 bytes).
 PDF statistics:
- 208 PDF objects out of 1000 (max. 8388607)
- 38 named destinations out of 1000 (max. 500000)
- 169 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 225 PDF objects out of 1000 (max. 8388607)
+ 42 named destinations out of 1000 (max. 500000)
+ 190 words of extra memory for PDF output out of 10000 (max. 10000000)
 

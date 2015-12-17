@@ -4,7 +4,7 @@
 \contentsline {section}{\numberline {2}Project Description}{3}{section.2}
 \contentsline {subsection}{\numberline {2.1}Design and Features}{3}{subsection.2.1}
 \contentsline {subsubsection}{\numberline {2.1.1}3d-Mechanics}{3}{subsubsection.2.1.1}
-\contentsline {subsubsection}{\numberline {2.1.2}4d-Mechanics}{4}{subsubsection.2.1.2}
+\contentsline {subsubsection}{\numberline {2.1.2}4D-Mechanics}{4}{subsubsection.2.1.2}
 \contentsline {section}{\numberline {3}Week Structure}{5}{section.3}
 \contentsline {subsection}{\numberline {3.1}Time Table}{5}{subsection.3.1}
 \contentsline {subsection}{\numberline {3.2}Breakdown}{5}{subsection.3.2}
@@ -20,3 +20,5 @@
 \contentsline {subsubsection}{\numberline {4.1.2}Transparency of 4D objects}{8}{subsubsection.4.1.2}
 \contentsline {section}{\numberline {5}Conclusion}{10}{section.5}
 \contentsline {section}{\numberline {6}Bibliography}{11}{section.6}
+\contentsline {section}{\numberline {7}Appendix}{11}{section.7}
+\contentsline {subsection}{\numberline {7.1}Test chamber from portal}{11}{subsection.7.1}
