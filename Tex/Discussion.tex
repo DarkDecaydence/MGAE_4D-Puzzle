@@ -1,8 +1,7 @@
 \section{Discussion}
-\subsection{Alternate solutions}
 Throughout our project, multiple choices were made to further development. In this section, we will discuss alternatives to our chosen solutions.
 
-\subsubsection{4D-transformations and -movement}
+\subsection{4D-transformations and -movement}
 Instead of moving between points on the fourth dimension, we could instead have used a more fluid movement system, which we considered during the first week of development. This approach lends much more freedom to the player, and creates a true 4D environment, which in design terms better communicate our chosen message.\\
 
 Fluid movement would mean less replication of environments, but more complex collision calculations. The trade-off here would be hard to measure concretely, since a fluid collision detection system was never implemented properly, but it would apply pressure to the algorithms instead of the object count. Additionally, only one complex collision detection algorithm would be necessary, instead of the multiple simple ones needed as part of composite objects used in our final solution.\\
@@ -11,10 +10,8 @@ This movement could include correct mathematical rotation around all geometric p
 
 While a technically interesting challenge, the design itself would be a struggle of understanding and applying mathematical concepts to properly fit a game play in which it could become highly unnecessary. The approach we used lends itself especially well to game play due to its relative ease of understanding and appliance, two qualities which the fluid solution does not possess.
 
-\subsubsection{Transparency of 4D objects}
-We decided to use transparency as a means to visualize the fourth dimension. We did consider colour and used some elements of that consideration in our final design.\\
-
-The transparency is handled by the standard shader Unity uses, in which options are changed when the player moves along the fourth dimension. This enables objects to become opaque or fully transparent, depending on the object's relative distance (on the W-axis) to the player character.\\
+\subsection{Transparency of 4D objects}
+We decided to use transparency as a means to visualize the fourth dimension, which is handled by the standard shader Unity uses. Within the shader, options are changed when the player moves along the fourth dimension. This enables objects to become opaque or fully transparent, depending on the object's relative distance (on the W-axis) to the player character.\\
 
 Our implementation does need some optimization. Currently, the materials have their colour changed such that the transparency applies, but this does not exclude even fully transparent objects from being drawn during rendering passes. Unity also needs every object to be non-static in order to change the rendering options correctly, which prevents us from using occlusion culling.\\
 

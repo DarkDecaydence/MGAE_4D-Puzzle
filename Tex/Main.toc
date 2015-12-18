@@ -15,11 +15,12 @@
 \contentsline {subsubsection}{\numberline {3.2.5}Week five}{7}{subsubsection.3.2.5}
 \contentsline {subsubsection}{\numberline {3.2.6}Week six}{7}{subsubsection.3.2.6}
 \contentsline {section}{\numberline {4}Discussion}{8}{section.4}
-\contentsline {subsection}{\numberline {4.1}Alternate solutions}{8}{subsection.4.1}
-\contentsline {subsubsection}{\numberline {4.1.1}4D-transformations and -movement}{8}{subsubsection.4.1.1}
-\contentsline {subsubsection}{\numberline {4.1.2}Transparency of 4D objects}{8}{subsubsection.4.1.2}
-\contentsline {section}{\numberline {5}Conclusion}{10}{section.5}
-\contentsline {section}{\numberline {6}Bibliography}{11}{section.6}
-\contentsline {section}{\numberline {7}Appendix}{12}{section.7}
-\contentsline {subsection}{\numberline {7.1}Project files}{12}{subsection.7.1}
-\contentsline {subsection}{\numberline {7.2}Figures}{13}{subsection.7.2}
+\contentsline {subsection}{\numberline {4.1}4D-transformations and -movement}{8}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Transparency of 4D objects}{8}{subsection.4.2}
+\contentsline {section}{\numberline {5}Conclusion}{9}{section.5}
+\contentsline {section}{\numberline {6}Bibliography}{10}{section.6}
+\contentsline {section}{Appendices}{11}{section*.3}
+\contentsline {section}{\numberline {A}Project Files}{11}{Appendix.1.A}
+\contentsline {section}{\numberline {B}Complete UML}{12}{Appendix.1.B}
+\contentsline {section}{\numberline {C}Fourth Dimension algorithm}{13}{Appendix.1.C}
+\contentsline {section}{\numberline {D}Portal test chamber}{14}{Appendix.1.D}

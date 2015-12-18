@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.11)  18 DEC 2015 02:38
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.11)  18 DEC 2015 03:28
 entering extended mode
 **Main.tex
 (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Main.tex
@@ -522,10 +522,16 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks22
 \@floatcapt=\box34
 )
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\appendix\appendix.sty"
+Package: appendix 2009/09/02 v1.2b extra appendix facilities
+\c@@pps=\count113
+\c@@ppsavesec=\count114
+\c@@ppsaveapp=\count115
+)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\placeins\placeins.sty"
 Package: placeins 2005/04/18  v 2.2
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 19.
+Package hyperref Info: Option `colorlinks' set `true' on input line 20.
 
 (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Main.aux
 (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Introduction.aux)
@@ -534,33 +540,33 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 19.
 (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Discussion.aux)
 (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Conclusion.aux)
 (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Appendix.aux))
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count113
+\scratchcounter=\count116
 \scratchdimen=\dimen122
 \scratchbox=\box35
-\nofMPsegments=\count114
-\nofMParguments=\count115
+\nofMPsegments=\count117
+\nofMParguments=\count118
 \everyMPshowfont=\toks23
-\MPscratchCnt=\count116
+\MPscratchCnt=\count119
 \MPscratchDim=\dimen123
-\MPnumerator=\count117
-\makeMPintoPDFobject=\count118
+\MPnumerator=\count120
+\makeMPintoPDFobject=\count121
 \everyMPtoPDFconversion=\toks24
 )
 *geometry* driver: auto-detecting
@@ -598,18 +604,18 @@ LaTeX Font Info:    ... okay on input line 21.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 \AtBeginShipoutBox=\box36
-Package hyperref Info: Link coloring ON on input line 21.
+Package hyperref Info: Link coloring ON on input line 22.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count119
+\c@section@level=\count122
 )
-LaTeX Info: Redefining \ref on input line 21.
-LaTeX Info: Redefining \pageref on input line 21.
-LaTeX Info: Redefining \nameref on input line 21.
+LaTeX Info: Redefining \ref on input line 22.
+LaTeX Info: Redefining \pageref on input line 22.
+LaTeX Info: Redefining \nameref on input line 22.
 
 (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Main.out)
 (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Main.out)
@@ -630,7 +636,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.43 
+l.44 
       [1] (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Introduction.tex
 Underfull \hbox (badness 10000) in paragraph at lines 5--6
 
@@ -788,126 +794,115 @@ Underfull \hbox (badness 10000) in paragraph at lines 88--89
  []
 
 ) [7] (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Discussion.tex
-Underfull \hbox (badness 10000) in paragraph at lines 6--7
+Underfull \hbox (badness 10000) in paragraph at lines 5--6
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8--9
+Underfull \hbox (badness 10000) in paragraph at lines 7--8
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 10--11
+Underfull \hbox (badness 10000) in paragraph at lines 9--10
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 15--16
+Underfull \hbox (badness 10000) in paragraph at lines 14--15
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 17--18
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 19--20
+Underfull \hbox (badness 10000) in paragraph at lines 16--17
 
  []
 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 21--47
+Underfull \hbox (badness 10000) in paragraph at lines 18--48
 
  []
 
 [8
 
 
-] [9] (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Conclusion.tex
+] (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Conclusion.tex
 Underfull \hbox (badness 10000) in paragraph at lines 2--3
 
  []
 
-) [10
+) [9
 
 
-] (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Appendix.tex [11
+] (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Appendix.tex [10
 
 
 ]
-<pictures/FileOverview.png, id=199, 581.17125pt x 730.22812pt>
+<pictures/FileOverview.png, id=195, 581.17125pt x 730.22812pt>
 File: pictures/FileOverview.png Graphic file (type png)
 
 <use pictures/FileOverview.png>
-Package pdftex.def Info: pictures/FileOverview.png used on input line 26.
+Package pdftex.def Info: pictures/FileOverview.png used on input line 27.
 (pdftex.def)             Requested size: 406.8171pt x 511.1562pt.
- [12pdfTeX warning (ext4): destination with the same identifier (name{figure.1}
+ [11pdfTeX warning (ext4): destination with the same identifier (name{figure.1}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.32 \subsection
-                {Figures} <D:/MGAE/UnityProject/4D-Puzzle/MGAE_4D-Puzzle/Tex/pi
-ctures/FileOverview.png (PNG copy)>]
-<pictures/4D-Puzzle-Flowchart.png, id=205, 1165.35374pt x 844.20393pt>
+l.32 	\section
+              {Complete UML} <D:/MGAE/UnityProject/4D-Puzzle/MGAE_4D-Puzzle/Tex
+/pictures/FileOverview.png (PNG copy)>]
+<pictures/4D-Puzzle-Flowchart.png, id=201, 1165.35374pt x 844.20393pt>
 File: pictures/4D-Puzzle-Flowchart.png Graphic file (type png)
 
 <use pictures/4D-Puzzle-Flowchart.png>
-Package pdftex.def Info: pictures/4D-Puzzle-Flowchart.png used on input line 35
+Package pdftex.def Info: pictures/4D-Puzzle-Flowchart.png used on input line 36
 .
 (pdftex.def)             Requested size: 1165.3509pt x 844.20187pt.
 
-Overfull \hbox (3.84726pt too wide) in paragraph at lines 35--36
+Overfull \hbox (3.84726pt too wide) in paragraph at lines 36--37
  [][] 
  []
 
-<pictures/FourthDimensionUML.png, id=207, 364.51181pt x 425.94131pt>
+[12pdfTeX warning (ext4): destination with the same identifier (name{figure.2})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.41 	\section
+              {Fourth Dimension algorithm} <D:/MGAE/UnityProject/4D-Puzzle/MGAE
+_4D-Puzzle/Tex/pictures/4D-Puzzle-Flowchart.png>]
+<pictures/FourthDimensionUML.png, id=210, 364.51181pt x 425.94131pt>
 File: pictures/FourthDimensionUML.png Graphic file (type png)
 
 <use pictures/FourthDimensionUML.png>
-Package pdftex.def Info: pictures/FourthDimensionUML.png used on input line 42.
+Package pdftex.def Info: pictures/FourthDimensionUML.png used on input line 45.
 
 (pdftex.def)             Requested size: 364.51091pt x 425.94028pt.
+ [13pdfTeX warning (ext4): destination with the same identifier (name{figure.3}
+) has been already used, duplicate ignored
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<pictures/portalChamber.jpg, id=208, 1003.75pt x 565.11125pt>
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.50 	\section
+              {Portal test chamber} <D:/MGAE/UnityProject/4D-Puzzle/MGAE_4D-Puz
+zle/Tex/pictures/FourthDimensionUML.png>]
+<pictures/portalChamber.jpg, id=216, 1003.75pt x 565.11125pt>
 File: pictures/portalChamber.jpg Graphic file (type jpg)
 
 <use pictures/portalChamber.jpg>
-Package pdftex.def Info: pictures/portalChamber.jpg used on input line 49.
+Package pdftex.def Info: pictures/portalChamber.jpg used on input line 54.
 (pdftex.def)             Requested size: 1003.74756pt x 565.10986pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-) [13pdfTeX warning (ext4): destination with the same identifier (name{figure.2
+) [14pdfTeX warning (ext4): destination with the same identifier (name{figure.4
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.49 \include{Appendix}
-                        <D:/MGAE/UnityProject/4D-Puzzle/MGAE_4D-Puzzle/Tex/pict
-ures/4D-Puzzle-Flowchart.png>] [14pdfTeX warning (ext4): destination with the s
-ame identifier (name{figure.3}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.49 \include{Appendix}
-                        <D:/MGAE/UnityProject/4D-Puzzle/MGAE_4D-Puzzle/Tex/pict
-ures/FourthDimensionUML.png>] [15pdfTeX warning (ext4): destination with the sa
-me identifier (name{figure.4}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.49 \include{Appendix}
+l.50 \include{Appendix}
                         <D:/MGAE/UnityProject/4D-Puzzle/MGAE_4D-Puzzle/Tex/pict
 ures/portalChamber.jpg>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 51.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 51.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 52.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 52.
 
 (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Main.aux
 (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Introduction.aux)
@@ -916,20 +911,20 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 51.
 (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Discussion.aux)
 (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Conclusion.aux)
 (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Appendix.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 51.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 51.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 52.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 52.
 Package rerunfilecheck Info: File `Main.out' has not changed.
-(rerunfilecheck)             Checksum: 7EDC1B457A83ACE82CABDB9B84E4F0F9;1530.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 51.
+(rerunfilecheck)             Checksum: E3096A1D0FB70442FEBFAF9FA8D180B0;1551.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 52.
  ) 
 Here is how much of TeX's memory you used:
- 7616 strings out of 493921
- 113216 string characters out of 3144864
- 213947 words of memory out of 3000000
- 10721 multiletter control sequences out of 15000+200000
- 9017 words of font info for 32 fonts, out of 3000000 for 9000
+ 7715 strings out of 493921
+ 114636 string characters out of 3144864
+ 215519 words of memory out of 3000000
+ 10817 multiletter control sequences out of 15000+200000
+ 9623 words of font info for 34 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 37i,9n,39p,971b,440s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 37i,9n,39p,963b,440s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/P
@@ -937,9 +932,9 @@ rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Progr
 am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program
  Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program F
 iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Main.pdf (16 pages, 989343 bytes).
+Output written on Main.pdf (15 pages, 989488 bytes).
 PDF statistics:
  260 PDF objects out of 1000 (max. 8388607)
  50 named destinations out of 1000 (max. 500000)
- 213 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 221 words of extra memory for PDF output out of 10000 (max. 10000000)
 
