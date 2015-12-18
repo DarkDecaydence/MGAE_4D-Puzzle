@@ -4,9 +4,11 @@ The goal of this project was to create a puzzle game using the Unity 3D-engine, 
 The fourth dimension is achieved by building several 3D-environments which inhabit the same 3D-space, yet is separated on the fourth axis (W). The W-axis can be traversed in incremental steps where each step moves the player from one 3D-environment to another.
  
 \subsection{Design and Features}
-The design and desired features of the game can be divided into two groups; 4D-mechanics and 3D-mechanics. This distinction separates the design into features that are unique to the game, and those which still function with the absence of a fourth spatial dimension.
+The design and desired features of the game can be divided into two groups; 4D-mechanics and 3D-mechanics. This distinction separates the design into features that are unique to the game, and those which still function with the absence of a fourth spatial dimension.\\
 
-\subsubsection{3d-Mechanics}
+A complete overview of the final system architecture can be found in appendix, figure \ref{completeUML}.
+
+\subsubsection{3D-Mechanics}
 These are the desired features which are not dependent on the existence of a fourth spatial dimension. The following list aims to define and clarify each feature and their dependence on other parts of the design.
 \begin{itemize}
 	\item 3D-FPS movement:\\
@@ -26,7 +28,7 @@ These are the desired features which are not dependent on the existence of a fou
 \subsubsection{4D-Mechanics}
 \begin{itemize}
 	\item Collisions:\\
-	Objects in the same 3d-space, but on different points along the fourth axis, must not collide, meaning that even though two objects are intersecting in the 3d-environment they should only collide if they also intersect on the fourth dimension. Using Unity's 3D-collision detection and expanding it through the layers system (making collision layers), an incremental 4th axis can be achieved. This requires objects to change layers according to their W position for the collisions to work correctly. Using scripts to add a W coordinate, and handle the layering, creates a fairly simple implementation. However, many objects require this mechanism, thus it is important for it to be optimized in terms of processing time, memory usage, and accessibility in level design. Therefore a script which can handle multiple nested game objects was also required. 
+	Objects in the same 3D-space, but on different points along the fourth axis, must not collide, meaning that even though two objects are intersecting in the 3D-environment they should only collide if they also intersect on the fourth dimension. Using Unity's 3D-collision detection and expanding it through the layers system (making collision layers), an incremental 4th axis can be achieved. This requires objects to change layers according to their W position for the collisions to work correctly. Using scripts to add a W coordinate, and handle the layering, creates a fairly simple implementation. However, many objects require this mechanism, thus it is important for it to be optimized in terms of processing time, memory usage, and accessibility in level design. Therefore a script which can handle multiple nested game objects was also required (see appendix, figure \ref{fourthOnlyUML} for appropriate UML). 
 	\item Moving:\\
 	In relation to Collisions and interaction, the player controller must also change layer according to its W-position, while granting the player an ability to change their W-position. This requires that the mechanism used for detecting interactable objects is filtered according to W-position.
 	\item Rendering/Colouring:\\
