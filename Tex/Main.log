@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.11)  18 DEC 2015 02:10
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.5.11)  18 DEC 2015 02:37
 entering extended mode
 **Main.tex
 (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Main.tex
@@ -768,11 +768,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 77--78
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--80
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 82--83
 
  []
@@ -792,7 +787,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 88--89
 
  []
 
-) [7] [8] (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Discussion.tex
+) [7] (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Discussion.tex
 Underfull \hbox (badness 10000) in paragraph at lines 6--7
 
  []
@@ -827,28 +822,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 21--47
 
  []
 
-[9
+[8
 
 
-] [10] (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Conclusion.tex
+] [9] (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Conclusion.tex
 Underfull \hbox (badness 10000) in paragraph at lines 2--3
 
  []
 
-) [11
+) [10
 
 
-] (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Appendix.tex [12
+] (D:\MGAE\UnityProject\4D-Puzzle\MGAE_4D-Puzzle\Tex\Appendix.tex [11
 
 
 ]
-<pictures/FileOverview.png, id=204, 581.17125pt x 730.22812pt>
+<pictures/FileOverview.png, id=199, 581.17125pt x 730.22812pt>
 File: pictures/FileOverview.png Graphic file (type png)
 
 <use pictures/FileOverview.png>
 Package pdftex.def Info: pictures/FileOverview.png used on input line 26.
 (pdftex.def)             Requested size: 406.8171pt x 511.1562pt.
- [13pdfTeX warning (ext4): destination with the same identifier (name{figure.1}
+ [12pdfTeX warning (ext4): destination with the same identifier (name{figure.1}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -856,7 +851,7 @@ Package pdftex.def Info: pictures/FileOverview.png used on input line 26.
 l.32 \subsection
                 {Figures} <D:/MGAE/UnityProject/4D-Puzzle/MGAE_4D-Puzzle/Tex/pi
 ctures/FileOverview.png (PNG copy)>]
-<pictures/4D-Puzzle-Flowchart.png, id=209, 1165.35374pt x 844.20393pt>
+<pictures/4D-Puzzle-Flowchart.png, id=205, 1165.35374pt x 844.20393pt>
 File: pictures/4D-Puzzle-Flowchart.png Graphic file (type png)
 
 <use pictures/4D-Puzzle-Flowchart.png>
@@ -868,7 +863,7 @@ Overfull \hbox (3.84726pt too wide) in paragraph at lines 35--36
  [][] 
  []
 
-<pictures/FourthDimensionUML.png, id=211, 364.51181pt x 425.94131pt>
+<pictures/FourthDimensionUML.png, id=207, 364.51181pt x 425.94131pt>
 File: pictures/FourthDimensionUML.png Graphic file (type png)
 
 <use pictures/FourthDimensionUML.png>
@@ -879,7 +874,7 @@ Package pdftex.def Info: pictures/FourthDimensionUML.png used on input line 42.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<pictures/portalChamber.jpg, id=212, 1003.75pt x 565.11125pt>
+<pictures/portalChamber.jpg, id=208, 1003.75pt x 565.11125pt>
 File: pictures/portalChamber.jpg Graphic file (type jpg)
 
 <use pictures/portalChamber.jpg>
@@ -889,21 +884,21 @@ Package pdftex.def Info: pictures/portalChamber.jpg used on input line 49.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) [14pdfTeX warning (ext4): destination with the same identifier (name{figure.2
+) [13pdfTeX warning (ext4): destination with the same identifier (name{figure.2
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.49 \include{Appendix}
                         <D:/MGAE/UnityProject/4D-Puzzle/MGAE_4D-Puzzle/Tex/pict
-ures/4D-Puzzle-Flowchart.png>] [15pdfTeX warning (ext4): destination with the s
+ures/4D-Puzzle-Flowchart.png>] [14pdfTeX warning (ext4): destination with the s
 ame identifier (name{figure.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.49 \include{Appendix}
                         <D:/MGAE/UnityProject/4D-Puzzle/MGAE_4D-Puzzle/Tex/pict
-ures/FourthDimensionUML.png>] [16pdfTeX warning (ext4): destination with the sa
+ures/FourthDimensionUML.png>] [15pdfTeX warning (ext4): destination with the sa
 me identifier (name{figure.4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
@@ -928,13 +923,13 @@ Package rerunfilecheck Info: File `Main.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 51.
  ) 
 Here is how much of TeX's memory you used:
- 7617 strings out of 493921
- 113223 string characters out of 3144864
+ 7616 strings out of 493921
+ 113216 string characters out of 3144864
  213947 words of memory out of 3000000
  10721 multiletter control sequences out of 15000+200000
  9017 words of font info for 32 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 37i,9n,39p,972b,438s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 37i,9n,39p,971b,440s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/P
@@ -942,9 +937,9 @@ rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Progr
 am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program
  Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program F
 iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Main.pdf (17 pages, 990324 bytes).
+Output written on Main.pdf (16 pages, 989344 bytes).
 PDF statistics:
- 264 PDF objects out of 1000 (max. 8388607)
- 51 named destinations out of 1000 (max. 500000)
+ 260 PDF objects out of 1000 (max. 8388607)
+ 50 named destinations out of 1000 (max. 500000)
  213 words of extra memory for PDF output out of 10000 (max. 10000000)
 
